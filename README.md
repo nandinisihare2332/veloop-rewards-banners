@@ -90,10 +90,10 @@ src/
 *(Add screenshots here after deploying)*
 
 ## Live Demo
-- [Live Demo Link](#) *(Update with actual Vercel/Netlify link)*
+- [https://veloop-rewards-banners-hazel.vercel.app/]
 
 ## GitHub Repository
-- [GitHub Repo Link](#) *(Update with actual repo link)*
+- [https://github.com/nandinisihare2332/veloop-rewards-banners.git]
 
 ## Author
 Nandini
