@@ -87,7 +87,7 @@ src/
 - **Transitions:** Smooth, optimized CSS transitions for scaling and colors.
 
 ## Screenshots
-*(Add screenshots here after deploying)*
+![Veloop Rewards Banners Screenshot](./public/screenshot.png)
 
 ## Live Demo
 - [https://veloop-rewards-banners-hazel.vercel.app/]
