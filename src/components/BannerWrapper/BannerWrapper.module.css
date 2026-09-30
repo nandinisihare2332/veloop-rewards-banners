@@ -1,0 +1,43 @@
+.bannerWrapper {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  background-color: #1e293b; /* fallback */
+}
+
+.bannerWrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+/* Responsive heights */
+.bannerWrapper {
+  min-height: 410px;
+  max-height: 450px;
+}
+
+@media (max-width: 1024px) {
+  .bannerWrapper {
+    min-height: 380px;
+    max-height: 540px;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .bannerWrapper {
+    min-height: 330px;
+    max-height: 520px;
+  }
+}

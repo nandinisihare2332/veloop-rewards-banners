@@ -1,0 +1,326 @@
+.wrapper {
+  background: radial-gradient(circle at 80% 50%, #1e1b4b 0%, #0f172a 60%);
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  width: 100%;
+}
+
+.content {
+  flex: 1;
+  max-width: 45%;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(251, 146, 60, 0.1);
+  color: #fb923c;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(251, 146, 60, 0.2);
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: #f8fafc;
+}
+
+.headingHighlight {
+  background: linear-gradient(90deg, #fcd34d 0%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.cta {
+  background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(217, 119, 6, 0.5);
+}
+
+.ctaIcon {
+  transition: transform 0.3s ease;
+}
+
+.cta:hover .ctaIcon {
+  transform: translateX(4px);
+}
+
+/* Visual Area */
+.visualArea {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 320px;
+}
+
+.bonusCircle {
+  position: absolute;
+  top: 20px;
+  right: 120px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px dashed rgba(252, 211, 77, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: spinSlow 20s linear infinite;
+  z-index: 1;
+}
+
+.bonusCircle > span {
+  animation: spinSlowReverse 20s linear infinite;
+}
+
+.bonusText {
+  color: #fcd34d;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+}
+
+.veText {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.vault {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+  border-radius: 50%;
+  border: 8px solid #334155;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.vaultDoor {
+  position: absolute;
+  right: -20px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #475569 0%, #1e293b 100%);
+  border: 4px solid #64748b;
+  transform: perspective(400px) rotateY(-30deg);
+  transform-origin: left center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 10px 0 20px rgba(0,0,0,0.4);
+}
+
+.handle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 4px solid #94a3b8;
+  position: relative;
+}
+
+.handle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 4px;
+  background: #94a3b8;
+}
+
+.coinsContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.coin {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #fcd34d 0%, #d97706 100%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #78350f;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  border: 2px solid #fef3c7;
+}
+
+.coin1 {
+  top: 30%;
+  left: 40%;
+  animation: floatCoin 3s ease-in-out infinite;
+}
+
+.coin2 {
+  top: 60%;
+  left: 20%;
+  animation: floatCoin 4s ease-in-out infinite 1s;
+}
+
+.coin3 {
+  top: 50%;
+  left: 60%;
+  animation: floatCoin 3.5s ease-in-out infinite 0.5s;
+}
+
+.activitiesList {
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 3;
+}
+
+.activityItem {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.activityItem:hover {
+  transform: translateX(5px);
+  background: rgba(30, 41, 59, 0.9);
+}
+
+.activityIconWrap {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.activityText {
+  display: flex;
+  flex-direction: column;
+}
+
+.activityTitle {
+  font-size: 0.75rem;
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.activitySub {
+  font-size: 0.65rem;
+  color: #94a3b8;
+}
+
+@keyframes floatCoin {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(10deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinSlowReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .activitiesList {
+    left: -40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2rem;
+  }
+  
+  .activitiesList {
+    display: none; /* Hide complex elements on small screens */
+  }
+  
+  .bonusCircle {
+    right: 20px;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .vault {
+    width: 120px;
+    height: 120px;
+  }
+}

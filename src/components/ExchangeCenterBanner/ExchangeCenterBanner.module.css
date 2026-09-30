@@ -1,0 +1,286 @@
+.wrapper {
+  background: radial-gradient(circle at bottom, #170f2e 0%, #161827 70%);
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  width: 100%;
+}
+
+.content {
+  flex: 1;
+  max-width: 45%;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(168, 85, 247, 0.1);
+  color: #c084fc;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: #f8fafc;
+}
+
+.gemText {
+  background: linear-gradient(90deg, #c084fc 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.veText {
+  background: linear-gradient(90deg, #fcd34d 0%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.cta {
+  background: linear-gradient(90deg, #fcd34d 0%, #f59e0b 100%);
+  color: #1e293b;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
+}
+
+.ctaIcon {
+  transition: transform 0.3s ease;
+}
+
+.cta:hover .ctaIcon {
+  transform: translateX(4px);
+}
+
+/* Visual Area */
+.visualArea {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 320px;
+}
+
+.glowBackground {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(252, 211, 77, 0.1) 50%, rgba(0,0,0,0) 80%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.conversionProcess {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 2;
+}
+
+.itemCard {
+  width: 130px;
+  height: 180px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.itemCard:hover {
+  transform: translateY(-5px);
+}
+
+.gemCard {
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.9) 0%, rgba(88, 28, 135, 0.4) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.veCard {
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.9) 0%, rgba(180, 83, 9, 0.4) 100%);
+  border: 1px solid rgba(252, 211, 77, 0.3);
+}
+
+.cardHeader {
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #cbd5e1;
+  margin-bottom: auto;
+}
+
+.iconWrapper {
+  margin-bottom: 20px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.gemIcon {
+  filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.6));
+}
+
+.veCoinWrapper {
+  margin-bottom: 20px;
+  animation: float 4s ease-in-out infinite 1s;
+}
+
+.veCoin {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #fcd34d 0%, #d97706 100%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #78350f;
+  box-shadow: 0 0 20px rgba(252, 211, 77, 0.4), inset 0 0 10px rgba(255,255,255,0.5);
+  border: 2px solid #fef3c7;
+}
+
+.arrowSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.pulseCircle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #94a3b8;
+  position: relative;
+}
+
+.pulseCircle::after {
+  content: '';
+  position: absolute;
+  top: -4px; left: -4px; right: -4px; bottom: -4px;
+  border-radius: 50%;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  animation: pulse 2s infinite;
+}
+
+.exchangeRate {
+  background: rgba(15, 23, 42, 0.6);
+  padding: 4px 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.rateValue {
+  font-size: 0.6rem;
+  color: #cbd5e1;
+}
+
+.miniArrow {
+  color: #64748b;
+  margin: 0 2px;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2rem;
+  }
+  
+  .itemCard {
+    width: 100px;
+    height: 140px;
+    padding: 12px;
+  }
+  
+  .gemIcon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .veCoin {
+    width: 48px;
+    height: 48px;
+    font-size: 1rem;
+  }
+  
+  .conversionProcess {
+    gap: 10px;
+  }
+}
