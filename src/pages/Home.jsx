@@ -10,17 +10,9 @@ function Home() {
   return (
     <div className="app-container page-transition">
       <ReferEarnBanner />
-      <div className="arrow-down">?</div>
-      
       <BonusVEsBanner />
-      <div className="arrow-down">?</div>
-      
       <SwapCenterBanner />
-      <div className="arrow-down">?</div>
-      
       <CaptchaTasksBanner />
-      <div className="arrow-down">?</div>
-      
       <ExchangeCenterBanner />
     </div>
   );
