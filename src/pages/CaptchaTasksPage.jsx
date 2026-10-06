@@ -47,7 +47,7 @@ const CaptchaTasksPage = () => {
   };
 
   return (
-    <div className="app-container page-transition" style={{ alignItems: 'flex-start' }}>
+    <div className="app-container page-transition" style={{ alignItems: 'flex-start', gap: '0px' }}>
       <button 
         onClick={() => navigate('/')}
         style={{ background: 'transparent', border: 'none', color: '#cbd5e1', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '10px 0', fontSize: '1rem', marginBottom: '20px' }}
