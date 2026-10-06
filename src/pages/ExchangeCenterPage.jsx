@@ -1,30 +1,40 @@
 ﻿import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Store, Coins, Check, CreditCard } from 'lucide-react';
+import { ArrowLeft, Wallet, ArrowRight } from 'lucide-react';
 import toast from 'react-hot-toast';
 import styles from './ExchangeCenterPage.module.css';
 import '../App.css';
 
 const ExchangeCenterPage = () => {
   const navigate = useNavigate();
-  const [sveBalance, setSveBalance] = useState(1500);
+  const [gems, setGems] = useState(1250);
+  const [veBalance, setVeBalance] = useState(2500);
+  const [exchangeAmount, setExchangeAmount] = useState('');
   
-  const exchangeItems = [
-    { id: 1, name: '$5 PayPal', cost: 500, type: 'cash', icon: '💸' },
-    { id: 2, name: '$10 Amazon Card', cost: 1000, type: 'giftcard', icon: '💳' },
-    { id: 3, name: 'Premium Avatar', cost: 200, type: 'digital', icon: '😎' },
-    { id: 4, name: '$20 Steam Wallet', cost: 1900, type: 'giftcard', icon: '🎮' },
-    { id: 5, name: 'Profile Badge', cost: 150, type: 'digital', icon: '🌟' },
-    { id: 6, name: '$50 Crypto Voucher', cost: 4800, type: 'crypto', icon: '💰' },
-  ];
+  const veToReceive = Math.floor(Number(exchangeAmount) / 10) || 0;
 
-  const handleExchange = (item) => {
-    if (sveBalance >= item.cost) {
-      setSveBalance(prev => prev - item.cost);
-      toast.success(`Successfully redeemed ${item.name}!`, { icon: '🎉' });
-    } else {
-      toast.error('Insufficient SVE balance!');
+  const handleExchange = (e) => {
+    e.preventDefault();
+    const amount = Number(exchangeAmount);
+    
+    if (amount <= 0 || amount % 10 !== 0) {
+      toast.error('Amount must be a multiple of 10');
+      return;
     }
+    
+    if (amount > gems) {
+      toast.error('Not enough Gems');
+      return;
+    }
+
+    setGems(prev => prev - amount);
+    setVeBalance(prev => prev + veToReceive);
+    setExchangeAmount('');
+    toast.success(`Successfully converted ${amount} Gems to ${veToReceive} VE!`, { icon: '💎' });
+  };
+
+  const handleMax = () => {
+    setExchangeAmount(Math.floor(gems / 10) * 10);
   };
 
   return (
@@ -38,47 +48,73 @@ const ExchangeCenterPage = () => {
 
       <div className={styles.pageCard}>
         <div className={styles.header}>
-           <div className={styles.headerLeft}>
-             <div className={styles.headerIconWrap}>
-               <Store size={32} className={styles.headerIcon} />
-             </div>
-             <div>
-               <h1 className={styles.pageTitle}>Exchange Center</h1>
-               <p className={styles.pageSubtitle}>Redeem your SVE for real-world rewards</p>
-             </div>
+           <div className={styles.headerIconWrap}>
+             <Wallet size={32} className={styles.headerIcon} />
            </div>
-           
-           <div className={styles.balanceBadge}>
-              <span className={styles.balanceLabel}>Available Balance</span>
-              <div className={styles.balanceWrap}>
-                <Coins size={24} className={styles.balanceIcon} />
-                <span className={styles.balanceValue}>{sveBalance.toLocaleString()} SVE</span>
+           <h1 className={styles.pageTitle}>Exchange Center</h1>
+        </div>
+
+        <div className={styles.balancesGrid}>
+           <div className={styles.balanceCardOutline}>
+              <div className={styles.balanceLabel}>My Gems</div>
+              <div className={styles.balanceValueWrap}>
+                <span className={styles.gemValue}>{gems.toLocaleString()}</span>
+                <span className={styles.gemIcon}>💎</span>
               </div>
+           </div>
+           <div className={styles.balanceCardOutline}>
+              <div className={styles.balanceLabel}>VE Balance</div>
+              <div className={styles.veValue}>{veBalance.toLocaleString()}</div>
            </div>
         </div>
-        
-        <div className={styles.grid}>
-           {exchangeItems.map(item => {
-             const canAfford = sveBalance >= item.cost;
-             return (
-              <div key={item.id} className={styles.itemCard}>
-                 <div className={styles.itemIcon}>{item.icon}</div>
-                 <h3 className={styles.itemName}>{item.name}</h3>
-                 <div className={styles.itemCostWrap}>
-                    <span className={styles.itemCost}>{item.cost}</span>
-                    <span className={styles.itemCostSuffix}>SVE</span>
+
+        <div className={styles.convertCard}>
+           <h3 className={styles.convertTitle}>Convert Gems to VE</h3>
+           
+           <div className={styles.rateBox}>
+              <div className={styles.rateCardGem}>
+                 10 Gems
+              </div>
+              <ArrowRight size={20} color="#64748b" />
+              <div className={styles.rateCardVe}>
+                 1 VE
+              </div>
+           </div>
+
+           <form onSubmit={handleExchange} className={styles.exchangeForm}>
+              <div className={styles.inputGroup}>
+                 <label className={styles.inputLabel}>Amount to Exchange (Gems)</label>
+                 <div className={styles.inputWrapper}>
+                   <input 
+                     type="number"
+                     value={exchangeAmount}
+                     onChange={(e) => setExchangeAmount(e.target.value)}
+                     placeholder="Must be multiple of 10"
+                     min="10"
+                     step="10"
+                     max={gems}
+                     className={styles.amountInput}
+                   />
                  </div>
                  
-                 <button 
-                    onClick={() => handleExchange(item)}
-                    disabled={!canAfford}
-                    className={canAfford ? styles.exchangeBtn : styles.exchangeBtnDisabled}
-                 >
-                    {canAfford ? 'Redeem Now' : 'Not enough SVE'}
-                 </button>
+                 <div className={styles.inputFooter}>
+                    <div className={styles.receiveText}>
+                       You will receive: <span className={styles.receiveValue}>{veToReceive} VE</span>
+                    </div>
+                    <button type="button" onClick={handleMax} className={styles.maxBtn}>
+                       Max: {gems}
+                    </button>
+                 </div>
               </div>
-             );
-           })}
+
+              <button 
+                type="submit" 
+                disabled={!exchangeAmount || exchangeAmount % 10 !== 0 || exchangeAmount > gems}
+                className={(!exchangeAmount || exchangeAmount % 10 !== 0 || exchangeAmount > gems) ? styles.submitBtnDisabled : styles.submitBtn}
+              >
+                Complete Exchange
+              </button>
+           </form>
         </div>
       </div>
     </div>

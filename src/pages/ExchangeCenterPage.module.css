@@ -1,227 +1,339 @@
 ﻿.backBtn {
-  background: transparent;
-  border: none;
-  color: #cbd5e1;
   display: flex;
   align-items: center;
   gap: 8px;
-  cursor: pointer;
-  padding: 10px 0;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
   font-size: 1rem;
-  margin-bottom: 20px;
-  transition: color 0.2s;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 24px;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .backBtn:hover {
-  color: #fff;
+  transform: translateX(-5px);
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .pageCard {
-  background: #161827;
+  background: linear-gradient(165deg, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.95));
+  backdrop-filter: blur(20px);
+  border-radius: 32px;
+  padding: 48px;
   width: 100%;
-  padding: 40px;
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.05);
-  min-height: 60vh;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.pageCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.5), transparent);
 }
 
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.headerLeft {
-  display: flex;
   align-items: center;
   gap: 20px;
+  margin-bottom: 48px;
+  position: relative;
+  z-index: 2;
 }
 
 .headerIconWrap {
-  background: rgba(168, 85, 247, 0.1);
-  padding: 15px;
-  border-radius: 50%;
-  border: 1px solid rgba(168, 85, 247, 0.2);
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
-}
-
-.headerIcon {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(99, 102, 241, 0.1));
   color: #a855f7;
+  padding: 16px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.1);
 }
 
 .pageTitle {
-  text-align: left;
-  margin-bottom: 4px;
-  color: #fff;
   font-size: 2.2rem;
   font-weight: 800;
-  line-height: 1.2;
-}
-
-.pageSubtitle {
-  color: #94a3b8;
-  font-size: 1rem;
+  color: #ffffff;
   margin: 0;
+  letter-spacing: -0.02em;
+  background: linear-gradient(to right, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.balanceBadge {
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  padding: 15px 25px;
-  border-radius: 12px;
+.balancesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+  position: relative;
+  z-index: 2;
+}
+
+.balanceCardOutline {
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 24px;
+  padding: 28px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  gap: 12px;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.balanceCardOutline::after {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%; width: 200%; height: 200%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.balanceCardOutline:hover {
+  transform: translateY(-5px);
+  border-color: rgba(139, 92, 246, 0.6);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(139, 92, 246, 0.15);
+}
+
+.balanceCardOutline:hover::after {
+  opacity: 1;
 }
 
 .balanceLabel {
+  font-size: 1rem;
   color: #94a3b8;
-  font-size: 0.85rem;
-  margin-bottom: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 2;
 }
 
-.balanceWrap {
+.balanceValueWrap {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
 }
 
-.balanceIcon {
-  color: #38bdf8;
-}
-
-.balanceValue {
-  color: #38bdf8;
-  font-size: 1.8rem;
+.gemValue {
+  font-size: 2.5rem;
   font-weight: 800;
-  line-height: 1;
+  background: linear-gradient(to right, #d8b4fe, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 24px;
+.gemIcon {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.4));
 }
 
-.itemCard {
+.veValue {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #fde047, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+.convertCard {
   background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 48px;
+  max-width: 650px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.convertTitle {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 40px;
+  letter-spacing: -0.01em;
+}
+
+.rateBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.rateCardGem, .rateCardVe {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
-  padding: 30px 24px;
+  padding: 20px 40px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.rateCardGem {
+  color: #d8b4fe;
+  border-color: rgba(168, 85, 247, 0.3);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.1);
+}
+
+.rateCardVe {
+  color: #fde047;
+  border-color: rgba(245, 158, 11, 0.3);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.1);
+}
+
+.exchangeForm {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  gap: 32px;
 }
 
-.itemCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-  border-color: rgba(168, 85, 247, 0.3);
-}
-
-.itemIcon {
-  font-size: 3rem;
-  margin-bottom: 16px;
-}
-
-.itemName {
-  color: #f8fafc;
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.itemCostWrap {
+.inputGroup {
   display: flex;
-  align-items: baseline;
-  gap: 6px;
-  margin-bottom: 24px;
-  background: rgba(56, 189, 248, 0.1);
-  padding: 6px 16px;
-  border-radius: 20px;
-  border: 1px solid rgba(56, 189, 248, 0.2);
+  flex-direction: column;
+  gap: 16px;
 }
 
-.itemCost {
-  color: #38bdf8;
-  font-size: 1.4rem;
-  font-weight: 800;
+.inputLabel {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #cbd5e1;
 }
 
-.itemCostSuffix {
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.amountInput {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.amountInput:focus {
+  border-color: #8b5cf6;
+  background: rgba(30, 41, 59, 0.9);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 0 4px rgba(139, 92, 246, 0.15);
+}
+
+.amountInput::placeholder {
+  color: #475569;
+  font-weight: 500;
+}
+
+.inputFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.receiveText {
+  font-size: 1rem;
   color: #94a3b8;
+  font-weight: 500;
+}
+
+.receiveValue {
+  color: #fde047;
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-left: 6px;
+  text-shadow: 0 0 10px rgba(253, 224, 71, 0.3);
+}
+
+.maxBtn {
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: #d8b4fe;
   font-size: 0.9rem;
   font-weight: 600;
-}
-
-.exchangeBtn {
-  width: 100%;
-  padding: 12px;
-  background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
   cursor: pointer;
-  transition: opacity 0.2s;
-  margin-top: auto;
-}
-
-.exchangeBtn:hover {
-  opacity: 0.9;
-}
-
-.exchangeBtnDisabled {
-  width: 100%;
-  padding: 12px;
-  background: #334155;
-  color: #94a3b8;
-  border: none;
+  padding: 6px 12px;
   border-radius: 8px;
-  font-weight: 600;
-  cursor: not-allowed;
-  margin-top: auto;
-}
-
-@media (max-width: 600px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .balanceBadge {
-    align-items: flex-start;
-  }
-}
-
-/* Hover effects */
-.itemCard {
-  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-.itemCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(124, 58, 237, 0.2);
-  border-color: rgba(139, 92, 246, 0.5);
-}
-
-.exchangeBtn {
-  transition: all 0.3s ease;
-}
-.exchangeBtn:hover {
-  background: linear-gradient(135deg, #a855f7, #8b5cf6);
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
-}
-
-.backBtn {
   transition: all 0.2s ease;
 }
-.backBtn:hover {
-  transform: translateX(-5px);
-  color: #fff;
+
+.maxBtn:hover {
+  background: rgba(139, 92, 246, 0.2);
+  transform: translateY(-1px);
+}
+
+.submitBtn, .submitBtnDisabled {
+  width: 100%;
+  padding: 20px;
+  border-radius: 16px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.submitBtn {
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  color: #ffffff;
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.submitBtn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4), 0 0 20px rgba(168, 85, 247, 0.4);
+}
+
+.submitBtnDisabled {
+  background: rgba(51, 65, 85, 0.5);
+  color: #64748b;
+  cursor: not-allowed;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 768px) {
+  .pageCard {
+    padding: 32px 24px;
+  }
+  .balancesGrid {
+    grid-template-columns: 1fr;
+  }
+  .rateBox {
+    flex-direction: row;
+    gap: 16px;
+  }
+  .rateCardGem, .rateCardVe {
+    padding: 16px 20px;
+    font-size: 1rem;
+  }
+  .convertCard {
+    padding: 32px 24px;
+  }
 }
