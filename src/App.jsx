@@ -7,12 +7,14 @@ import BonusVEsPage from './pages/BonusVEsPage';
 import CaptchaTasksPage from './pages/CaptchaTasksPage';
 import ExchangeCenterPage from './pages/ExchangeCenterPage';
 import NotFoundPage from './pages/NotFoundPage';
+import ScrollToTop from './components/ScrollToTop';
 import { Toaster } from 'react-hot-toast';
 import './App.css';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Toaster position="bottom-right" toastOptions={{ style: { background: '#1e293b', color: '#fff', border: '1px solid #334155' } }} />
       <Routes>
         <Route path="/" element={<Home />} />
