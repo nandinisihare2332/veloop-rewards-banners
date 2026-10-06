@@ -1,0 +1,227 @@
+﻿.backBtn {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 10px 0;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  transition: color 0.2s;
+}
+
+.backBtn:hover {
+  color: #fff;
+}
+
+.pageCard {
+  background: #161827;
+  width: 100%;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.05);
+  min-height: 60vh;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.headerIconWrap {
+  background: rgba(168, 85, 247, 0.1);
+  padding: 15px;
+  border-radius: 50%;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+}
+
+.headerIcon {
+  color: #a855f7;
+}
+
+.pageTitle {
+  text-align: left;
+  margin-bottom: 4px;
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.pageSubtitle {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.balanceBadge {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 15px 25px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.balanceLabel {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.balanceWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.balanceIcon {
+  color: #38bdf8;
+}
+
+.balanceValue {
+  color: #38bdf8;
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.itemCard {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.itemCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.itemIcon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.itemName {
+  color: #f8fafc;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.itemCostWrap {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 24px;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.itemCost {
+  color: #38bdf8;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.itemCostSuffix {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.exchangeBtn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-top: auto;
+}
+
+.exchangeBtn:hover {
+  opacity: 0.9;
+}
+
+.exchangeBtnDisabled {
+  width: 100%;
+  padding: 12px;
+  background: #334155;
+  color: #94a3b8;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: not-allowed;
+  margin-top: auto;
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .balanceBadge {
+    align-items: flex-start;
+  }
+}
+
+/* Hover effects */
+.itemCard {
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.itemCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(124, 58, 237, 0.2);
+  border-color: rgba(139, 92, 246, 0.5);
+}
+
+.exchangeBtn {
+  transition: all 0.3s ease;
+}
+.exchangeBtn:hover {
+  background: linear-gradient(135deg, #a855f7, #8b5cf6);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+}
+
+.backBtn {
+  transition: all 0.2s ease;
+}
+.backBtn:hover {
+  transform: translateX(-5px);
+  color: #fff;
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import BannerWrapper from '../BannerWrapper';
 import styles from './ReferEarnBanner.module.css';
@@ -26,7 +26,7 @@ const ReferEarnBanner = () => {
               <span>Invite Now</span>
               <ArrowRight size={16} />
             </button>
-            <button className={styles.secondaryCta}>
+            <button className={styles.secondaryCta} onClick={() => navigate('/refer-earn')}>
               <span>How It Works</span>
             </button>
           </div>
@@ -35,9 +35,9 @@ const ReferEarnBanner = () => {
         <div className={styles.visualArea}>
           <div className={styles.giftIcon}>
             <Gift size={64} className={styles.iconElement} />
-            <div className={styles.sparkle1}>?</div>
-            <div className={styles.sparkle2}>?</div>
-            <div className={styles.sparkle3}>?</div>
+            <div className={styles.sparkle1}>✨</div>
+            <div className={styles.sparkle2}>✨</div>
+            <div className={styles.sparkle3}>✨</div>
           </div>
           
           <div className={styles.referralCodeBox}>

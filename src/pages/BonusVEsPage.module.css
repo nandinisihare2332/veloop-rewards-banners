@@ -1,0 +1,253 @@
+﻿.backBtn {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 10px 0;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  transition: color 0.2s;
+}
+
+.backBtn:hover {
+  color: #fff;
+}
+
+.pageCard {
+  background: #161827;
+  width: 100%;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.05);
+  min-height: 60vh;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.headerIconWrap {
+  background: rgba(16, 185, 129, 0.1);
+  padding: 15px;
+  border-radius: 50%;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+}
+
+.headerIcon {
+  color: #10b981;
+}
+
+.pageTitle {
+  text-align: left;
+  margin-bottom: 4px;
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.pageSubtitle {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.totalBadge {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 15px 25px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.totalLabel {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.totalValue {
+  color: #fbbf24;
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.cardClaimed {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0.8;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cardIconWrap {
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.cardIconWrapClaimed {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.rewardText {
+  color: #fbbf24;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.rewardTextClaimed {
+  color: #10b981;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.cardBody {
+  flex-grow: 1;
+  margin-bottom: 24px;
+}
+
+.cardTitle {
+  color: #f8fafc;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.cardTitleClaimed {
+  color: #cbd5e1;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-decoration: line-through;
+  text-decoration-color: rgba(255,255,255,0.3);
+}
+
+.cardDesc {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.claimBtn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.claimBtn:hover {
+  opacity: 0.9;
+}
+
+.claimBtnDisabled {
+  width: 100%;
+  padding: 12px;
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .totalBadge {
+    align-items: flex-start;
+  }
+}
+
+/* Hover effects */
+.card {
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(124, 58, 237, 0.2);
+  border-color: rgba(139, 92, 246, 0.5);
+}
+
+.claimBtn {
+  transition: all 0.3s ease;
+}
+.claimBtn:hover {
+  background: linear-gradient(135deg, #a855f7, #8b5cf6);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+}
+
+.backBtn {
+  transition: all 0.2s ease;
+}
+.backBtn:hover {
+  transform: translateX(-5px);
+  color: #fff;
+}

@@ -1,22 +1,28 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Users, Copy, Check, Send } from 'lucide-react';
+﻿import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { ArrowLeft, Users, Copy, CheckCircle, Share2, Mail, ExternalLink } from 'lucide-react';
 import toast from 'react-hot-toast';
+import styles from './ReferEarnPage.module.css';
 import '../App.css';
 
 const ReferEarnPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [copied, setCopied] = useState(false);
   const [email, setEmail] = useState('');
   const [invites, setInvites] = useState([
-    { id: 1, email: 'friend1@example.com', status: 'Completed', reward: 500 },
-    { id: 2, email: 'friend2@example.com', status: 'Pending', reward: 0 }
+    { id: 1, email: 'john@example.com', status: 'Completed', reward: 50 },
+    { id: 2, email: 'sarah@example.com', status: 'Pending', reward: 0 },
   ]);
 
+    
+
+  const referralLink = "https://veloop.app/ref/VELOOP2024";
+
   const handleCopy = () => {
-    navigator.clipboard.writeText('VELOOP123');
+    navigator.clipboard.writeText(referralLink);
     setCopied(true);
-    toast.success('Referral code copied!');
+    toast.success('Referral link copied!');
     setTimeout(() => setCopied(false), 2000);
   };
 
@@ -32,77 +38,129 @@ const ReferEarnPage = () => {
     <div className="app-container page-transition" style={{ alignItems: 'flex-start', gap: '0px' }}>
       <button 
         onClick={() => navigate('/')}
-        style={{ background: 'transparent', border: 'none', color: '#cbd5e1', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '10px 0', fontSize: '1rem', marginBottom: '20px' }}
+        className={styles.backBtn}
       >
         <ArrowLeft size={20} /> Back to Rewards
       </button>
 
-      <div style={{ background: 'rgba(30, 41, 59, 0.5)', width: '100%', padding: '40px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', minHeight: '60vh' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
-          <div style={{ background: 'rgba(56, 189, 248, 0.1)', padding: '15px', borderRadius: '50%', color: '#38bdf8' }}>
-            <Users size={32} />
+      <div className={styles.pageCard}>
+        <div className={styles.header}>
+          <div className={styles.headerIconWrap}>
+            <Users size={32} className={styles.headerIcon} />
           </div>
-          <h1 style={{ textAlign: 'left', marginBottom: 0 }}>Refer & Earn</h1>
+          <h1 className={styles.pageTitle}>Refer & Earn</h1>
         </div>
-        
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginBottom: '30px' }}>
-          <div style={{ background: 'rgba(15, 23, 42, 0.6)', padding: '24px', borderRadius: '12px' }}>
-            <h3 style={{ color: '#f8fafc', marginBottom: '15px' }}>Share Your Link</h3>
-            <div style={{ display: 'flex', gap: '10px' }}>
-              <input type="text" readOnly value="https://veloop.com/r/VELOOP123" style={{ flex: 1, padding: '10px', borderRadius: '6px', border: '1px solid #334155', background: '#0f172a', color: '#94a3b8' }} />
-              <button onClick={handleCopy} style={{ padding: '10px 15px', background: '#3b82f6', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '5px' }}>
-                {copied ? <Check size={16} /> : <Copy size={16} />} {copied ? 'Copied' : 'Copy'}
-              </button>
+
+        <div className={styles.statsGrid}>
+          <div className={styles.statCard}>
+            <div>
+              <div className={styles.statLabel}>Total Invites</div>
+              <div className={styles.statValue}>{invites.length}</div>
+              <p className={styles.statDesc}>Friends joined</p>
             </div>
-            
-            <h3 style={{ color: '#f8fafc', marginTop: '25px', marginBottom: '15px' }}>Invite via Email</h3>
-            <form onSubmit={handleInvite} style={{ display: 'flex', gap: '10px' }}>
-              <input type="email" placeholder="friend@example.com" value={email} onChange={(e) => setEmail(e.target.value)} style={{ flex: 1, padding: '10px', borderRadius: '6px', border: '1px solid #334155', background: '#0f172a', color: 'white' }} />
-              <button type="submit" style={{ padding: '10px 15px', background: '#10b981', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '5px' }}>
-                <Send size={16} /> Send
-              </button>
-            </form>
+            <Users size={48} className={styles.statIconWrap} />
           </div>
-          
-          <div style={{ background: 'rgba(15, 23, 42, 0.6)', padding: '24px', borderRadius: '12px' }}>
-            <h3 style={{ color: '#f8fafc', marginBottom: '15px' }}>Total Rewards Earned</h3>
-            <p style={{ color: '#fbbf24', fontSize: '2.5rem', fontWeight: 'bold' }}>
-              {invites.reduce((acc, curr) => acc + curr.reward, 0)} VEs
-            </p>
-            <p style={{ color: '#94a3b8' }}>From {invites.filter(i => i.status === 'Completed').length} successful referrals</p>
+          <div className={styles.statCardSecondary}>
+            <div>
+              <div className={styles.statLabel}>Total Earned</div>
+              <div className={styles.statValueSecondary}>
+                 150 <span className={styles.veText}>VE</span>
+              </div>
+              <p className={styles.statDesc}>From referrals</p>
+            </div>
+            <Share2 size={48} className={styles.statIconWrapSecondary} />
           </div>
         </div>
 
-        <div style={{ background: 'rgba(15, 23, 42, 0.4)', padding: '24px', borderRadius: '12px' }}>
-           <h3 style={{ color: '#f8fafc', marginBottom: '15px' }}>Your Invites</h3>
-           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <div className={styles.actionGrid}>
+          <div className={styles.actionCard}>
+             <h3 className={styles.actionTitle}>Share your referral link</h3>
+             <p className={styles.actionDesc}>Copy your unique link and share it with friends.</p>
+             <div className={styles.inputGroup}>
+                <input 
+                  type="text" 
+                  value={referralLink} 
+                  readOnly 
+                  className={styles.inputBox}
+                />
+                <button onClick={handleCopy} className={styles.primaryBtn}>
+                  {copied ? <CheckCircle size={20} /> : <Copy size={20} />}
+                  {copied ? 'Copied' : 'Copy'}
+                </button>
+             </div>
+             
+             <h3 className={styles.actionTitle} style={{marginTop: '30px'}}>Invite via Email</h3>
+             <form onSubmit={handleInvite} className={styles.inputGroup}>
+                <input 
+                  type="email" 
+                  placeholder="friend@email.com" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className={styles.inputBox}
+                />
+                <button type="submit" className={styles.secondaryBtn}>
+                  <Mail size={20} /> Invite
+                </button>
+             </form>
+          </div>
+          
+          <div id="how-it-works" className={styles.howItWorksCard}>
+             <h3 className={styles.actionTitle}>How it works</h3>
+             <div style={{ marginTop: '20px' }}>
+                <div className={styles.stepItem}>
+                   <div className={styles.stepNum}>1</div>
+                   <div>
+                     <div className={styles.stepTitle}>Share Link</div>
+                     <div className={styles.stepDesc}>Send your link to friends</div>
+                   </div>
+                </div>
+                <div className={styles.stepItem}>
+                   <div className={styles.stepNum}>2</div>
+                   <div>
+                     <div className={styles.stepTitle}>Friends Join</div>
+                     <div className={styles.stepDesc}>They sign up & verify</div>
+                   </div>
+                </div>
+                <div className={styles.stepItem}>
+                   <div className={styles.stepNum}>3</div>
+                   <div>
+                     <div className={styles.stepTitle}>Earn VE</div>
+                     <div className={styles.stepDesc}>You both get 50 VE</div>
+                   </div>
+                </div>
+             </div>
+          </div>
+        </div>
+
+        <div className={styles.tableCard}>
+          <div className={styles.tableHeaderWrap}>
+            <h3 className={styles.actionTitle} style={{marginBottom: 0}}>Recent Invites</h3>
+            <ExternalLink size={20} color="#64748b" />
+          </div>
+          <div className={styles.tableResponsive}>
+            <table className={styles.customTable}>
               <thead>
-                 <tr style={{ borderBottom: '1px solid #334155', textAlign: 'left', color: '#94a3b8' }}>
-                    <th style={{ padding: '12px 0' }}>Email</th>
-                    <th style={{ padding: '12px 0' }}>Status</th>
-                    <th style={{ padding: '12px 0' }}>Reward</th>
-                 </tr>
+                <tr>
+                  <th>User Email</th>
+                  <th>Status</th>
+                  <th>Reward</th>
+                </tr>
               </thead>
               <tbody>
-                 {invites.map((invite) => (
-                    <tr key={invite.id} style={{ borderBottom: '1px solid #1e293b' }}>
-                       <td style={{ padding: '15px 0', color: '#e2e8f0' }}>{invite.email}</td>
-                       <td style={{ padding: '15px 0' }}>
-                          <span style={{ 
-                             padding: '4px 8px', 
-                             borderRadius: '4px', 
-                             fontSize: '0.8rem',
-                             background: invite.status === 'Completed' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(245, 158, 11, 0.1)',
-                             color: invite.status === 'Completed' ? '#10b981' : '#fbbf24'
-                          }}>
-                             {invite.status}
-                          </span>
-                       </td>
-                       <td style={{ padding: '15px 0', color: '#fbbf24' }}>+{invite.reward} VEs</td>
-                    </tr>
-                 ))}
+                {invites.map((invite) => (
+                  <tr key={invite.id}>
+                    <td className={styles.tdEmail}>{invite.email}</td>
+                    <td>
+                      <span className={invite.status === 'Completed' ? styles.statusCompleted : styles.statusPending}>
+                        {invite.status}
+                      </span>
+                    </td>
+                    <td className={styles.tdReward}>+{invite.reward} VE</td>
+                  </tr>
+                ))}
               </tbody>
-           </table>
+            </table>
+          </div>
         </div>
       </div>
     </div>

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, RefreshCw, ArrowRight } from 'lucide-react';
+import { ArrowLeft, RefreshCw, ArrowRight, ArrowDownUp } from 'lucide-react';
 import toast from 'react-hot-toast';
+import styles from './SwapCenterPage.module.css';
 import '../App.css';
 
 const SwapCenterPage = () => {
@@ -31,71 +32,78 @@ const SwapCenterPage = () => {
     <div className="app-container page-transition" style={{ alignItems: 'flex-start', gap: '0px' }}>
       <button 
         onClick={() => navigate('/')}
-        style={{ background: 'transparent', border: 'none', color: '#cbd5e1', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '10px 0', fontSize: '1rem', marginBottom: '20px' }}
+        className={styles.backBtn}
       >
         <ArrowLeft size={20} /> Back to Rewards
       </button>
 
-      <div style={{ background: 'rgba(30, 41, 59, 0.5)', width: '100%', padding: '40px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', minHeight: '60vh' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
-          <div style={{ background: 'rgba(56, 189, 248, 0.1)', padding: '15px', borderRadius: '50%', color: '#38bdf8' }}>
-            <RefreshCw size={32} />
+      <div className={styles.pageCard}>
+        <div className={styles.header}>
+          <div className={styles.headerIconWrap}>
+            <RefreshCw size={32} className={styles.headerIcon} />
           </div>
-          <h1 style={{ textAlign: 'left', marginBottom: 0 }}>Swap Center</h1>
+          <h1 className={styles.pageTitle}>Swap Center</h1>
         </div>
         
-        <div style={{ display: 'flex', gap: '20px', marginBottom: '40px' }}>
-           <div style={{ background: 'rgba(15, 23, 42, 0.6)', padding: '15px 25px', borderRadius: '12px', flex: 1, border: '1px solid #fbbf24' }}>
-              <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>VE Balance</div>
-              <div style={{ color: '#fbbf24', fontSize: '1.8rem', fontWeight: 'bold' }}>{veBalance.toLocaleString()}</div>
+        <div className={styles.balancesGrid}>
+           <div className={styles.balanceCardVe}>
+              <div className={styles.balanceLabel}>VE Balance</div>
+              <div className={styles.balanceValue}>{veBalance.toLocaleString()}</div>
            </div>
-           <div style={{ background: 'rgba(15, 23, 42, 0.6)', padding: '15px 25px', borderRadius: '12px', flex: 1, border: '1px solid #60a5fa' }}>
-              <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>SVE Balance</div>
-              <div style={{ color: '#60a5fa', fontSize: '1.8rem', fontWeight: 'bold' }}>{sveBalance.toLocaleString()}</div>
+           <div className={styles.balanceCardSve}>
+              <div className={styles.balanceLabel}>SVE Balance</div>
+              <div className={styles.balanceValueSve}>{sveBalance.toLocaleString()}</div>
            </div>
         </div>
 
-        <form onSubmit={handleSwap} style={{ background: 'rgba(15, 23, 42, 0.8)', padding: '40px', borderRadius: '16px', maxWidth: '600px', margin: '0 auto', border: '1px solid rgba(56, 189, 248, 0.2)' }}>
-          <h3 style={{ color: '#f8fafc', marginBottom: '20px', textAlign: 'center' }}>Swap VE to SVE</h3>
+        <form onSubmit={handleSwap} className={styles.swapForm}>
+          <div className={styles.formHeader}>
+             <ArrowDownUp size={24} className={styles.formIcon} />
+             <h3>Swap VE to SVE</h3>
+          </div>
           
-          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '30px' }}>
-             <div style={{ flex: 1, background: '#0f172a', padding: '20px', borderRadius: '12px', border: '1px solid #334155', textAlign: 'center' }}>
-                <span style={{ color: '#fbbf24', fontWeight: 'bold', fontSize: '1.2rem', display: 'block', marginBottom: '5px' }}>VE</span>
-                <span style={{ color: '#94a3b8', fontSize: '0.8rem' }}>1 VE = 1 SVE</span>
+          <div className={styles.exchangeRateBox}>
+             <div className={styles.currencyBox}>
+                <span className={styles.currencyName}>VE</span>
+                <span className={styles.currencyRate}>1 VE = 1 SVE</span>
              </div>
-             <ArrowRight size={24} color="#64748b" />
-             <div style={{ flex: 1, background: '#0f172a', padding: '20px', borderRadius: '12px', border: '1px solid #334155', textAlign: 'center' }}>
-                <span style={{ color: '#60a5fa', fontWeight: 'bold', fontSize: '1.2rem', display: 'block', marginBottom: '5px' }}>SVE</span>
-                <span style={{ color: '#94a3b8', fontSize: '0.8rem' }}>No fee</span>
+             <div className={styles.exchangeArrow}>
+                <ArrowRight size={24} color="#64748b" />
+             </div>
+             <div className={styles.currencyBoxSve}>
+                <span className={styles.currencyNameSve}>SVE</span>
+                <span className={styles.currencyRate}>No fee</span>
              </div>
           </div>
 
-          <div style={{ marginBottom: '20px' }}>
-             <label style={{ display: 'block', color: '#cbd5e1', marginBottom: '8px' }}>Amount to Swap (VE)</label>
-             <input 
-               type="number" 
-               value={swapAmount}
-               onChange={(e) => setSwapAmount(e.target.value)}
-               placeholder="Enter amount"
-               min="1"
-               max={veBalance}
-               style={{ width: '100%', padding: '15px', borderRadius: '8px', border: '1px solid #334155', background: '#0f172a', color: 'white', fontSize: '1.1rem' }}
-             />
-             <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '8px' }}>
-                <button type="button" onClick={() => setSwapAmount(veBalance)} style={{ background: 'transparent', border: 'none', color: '#38bdf8', cursor: 'pointer', fontSize: '0.8rem' }}>
-                   Max: {veBalance}
+          <div className={styles.inputSection}>
+             <div className={styles.inputHeader}>
+                <label>Amount to Swap</label>
+                <button type="button" onClick={() => setSwapAmount(veBalance)} className={styles.maxBtn}>
+                   MAX: {veBalance}
                 </button>
+             </div>
+             
+             <div className={styles.inputWrapper}>
+               <input 
+                 type="number" 
+                 value={swapAmount}
+                 onChange={(e) => setSwapAmount(e.target.value)}
+                 placeholder="0.00"
+                 min="1"
+                 max={veBalance}
+                 className={styles.amountInput}
+               />
+               <div className={styles.inputSuffix}>VE</div>
              </div>
           </div>
           
           <button 
              type="submit" 
              disabled={isSwapping || !swapAmount || swapAmount > veBalance}
-             style={{
-                width: '100%', padding: '15px', borderRadius: '8px', background: isSwapping ? '#475569' : '#3b82f6', color: 'white', border: 'none', fontSize: '1.1rem', fontWeight: 'bold', cursor: isSwapping || !swapAmount || swapAmount > veBalance ? 'not-allowed' : 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px'
-             }}
+             className={isSwapping || !swapAmount || swapAmount > veBalance ? styles.submitBtnDisabled : styles.submitBtn}
           >
-             {isSwapping ? <RefreshCw size={20} style={{ animation: 'spin 1s linear infinite' }} /> : 'Confirm Swap'}
+             {isSwapping ? <RefreshCw size={20} className={styles.spinIcon} /> : 'Confirm Swap'}
           </button>
         </form>
       </div>

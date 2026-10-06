@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import BannerWrapper from '../BannerWrapper';
 import styles from './ExchangeCenterBanner.module.css';
@@ -37,7 +37,7 @@ const ExchangeCenterBanner = () => {
                <div className={styles.exchangeIconWrap}>
                  <ArrowLeftRight size={20} />
                </div>
-               <div className={styles.rateInfo}>100 ? ? 10 VE</div>
+               <div className={styles.rateInfo}>100 💎 = 10 VE</div>
              </div>
              
              <div className={styles.cardVe}>
