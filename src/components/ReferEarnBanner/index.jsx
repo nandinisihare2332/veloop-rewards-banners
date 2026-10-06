@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import BannerWrapper from '../BannerWrapper';
 import styles from './ReferEarnBanner.module.css';
-import { ArrowRight, Gift, Copy, Share2, Info, Users, Sparkles } from 'lucide-react';
+import { ArrowRight, Gift, Share2, Copy } from 'lucide-react';
 
 const ReferEarnBanner = () => {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ const ReferEarnBanner = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.badge}>
-            <Users size={14} className={styles.badgeIcon} />
+            <Share2 size={14} className={styles.badgeIcon} />
             <span>REFER & EARN</span>
           </div>
           <h2 className={styles.heading}>
@@ -23,62 +23,59 @@ const ReferEarnBanner = () => {
           </p>
           <div className={styles.ctaGroup}>
             <button className={styles.cta} onClick={() => navigate('/refer-earn')}>
-              Invite Now <ArrowRight size={18} className={styles.ctaIcon} />
+              <span>Invite Now</span>
+              <ArrowRight size={16} />
             </button>
-            <button className={styles.secondaryCta} onClick={(e) => e.preventDefault()}>
-              <Info size={16} /> How It Works
+            <button className={styles.secondaryCta}>
+              <span>How It Works</span>
             </button>
           </div>
         </div>
         
         <div className={styles.visualArea}>
-          <div className={styles.glowEffect}></div>
-          <div className={styles.illustration}>
-            <div className={styles.referralCodeCard}>
-              <span className={styles.codeLabel}>Your Referral Code</span>
-              <div className={styles.codeBox}>
-                <span className={styles.codeText}>VELOOP123</span>
-                <button className={styles.copyBtn} aria-label="Copy Code">
-                  <Copy size={14} />
-                </button>
-              </div>
+          <div className={styles.giftIcon}>
+            <Gift size={64} className={styles.iconElement} />
+            <div className={styles.sparkle1}>?</div>
+            <div className={styles.sparkle2}>?</div>
+            <div className={styles.sparkle3}>?</div>
+          </div>
+          
+          <div className={styles.referralCodeBox}>
+            <div className={styles.referralLabel}>YOUR REFERRAL CODE</div>
+            <div className={styles.referralCode}>
+              VELOOP123 <Copy size={16} className={styles.copyIcon} />
             </div>
-            
-            <div className={styles.giftContainer}>
-              <Gift size={80} className={styles.giftIcon} strokeWidth={1.5} />
-              <Sparkles size={24} className={styles.sparkle1} />
-              <Sparkles size={18} className={styles.sparkle2} />
+          </div>
+          
+          <div className={styles.statsBox}>
+            <div className={styles.stat}>
+              <span className={styles.statLabel}>You Earn</span>
+              <span className={styles.statValue}>500 VEs</span>
             </div>
-
-            <div className={styles.rewardCard}>
-              <div className={styles.rewardInfo}>
-                <span className={styles.rewardTitle}>You Earn</span>
-                <span className={styles.rewardValue}>500 VEs</span>
-              </div>
-              <div className={styles.rewardDivider}></div>
-              <div className={styles.rewardInfo}>
-                <span className={styles.rewardTitle}>Friend Gets</span>
-                <span className={styles.rewardValue}>200 VEs</span>
-              </div>
+            <div className={styles.statDivider}></div>
+            <div className={styles.stat}>
+              <span className={styles.statLabel}>Friend Gets</span>
+              <span className={styles.statValue}>200 VEs</span>
             </div>
           </div>
         </div>
       </div>
-      <div className={styles.features}>
-          <div className={styles.featureItem}>
-             <Share2 size={16} className={styles.featureIcon}/>
-             <div className={styles.featureText}>
-                <strong>Easy to Share</strong>
-                <span>Share your link or code in just one click.</span>
-             </div>
+      
+      <div className={styles.footer}>
+        <div className={styles.footerItem}>
+          <Share2 size={16} className={styles.footerIcon} />
+          <div>
+            <div className={styles.footerTitle}>Easy to Share</div>
+            <div className={styles.footerDesc}>Share your link or code in just one click.</div>
           </div>
-          <div className={styles.featureItem}>
-             <Gift size={16} className={styles.featureIcon}/>
-             <div className={styles.featureText}>
-                <strong>Instant Rewards</strong>
-                <span>Earn VEs instantly when friends join.</span>
-             </div>
+        </div>
+        <div className={styles.footerItem}>
+          <Gift size={16} className={styles.footerIcon} />
+          <div>
+            <div className={styles.footerTitle}>Instant Rewards</div>
+            <div className={styles.footerDesc}>Earn VEs instantly when friends join.</div>
           </div>
+        </div>
       </div>
     </BannerWrapper>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import BannerWrapper from '../BannerWrapper';
 import styles from './SwapCenterBanner.module.css';
-import { ArrowRight, RefreshCw, CreditCard, ChevronRight } from 'lucide-react';
+import { ArrowRight, RefreshCw, Layers } from 'lucide-react';
 
 const SwapCenterBanner = () => {
   const navigate = useNavigate();
@@ -15,62 +15,49 @@ const SwapCenterBanner = () => {
             <span>EXCHANGE</span>
           </div>
           <h2 className={styles.heading}>
-            <span className={styles.headingHighlight}>Swap</span> Center
+            Swap Center
           </h2>
           <p className={styles.description}>
             Convert eligible reward balances between supported currencies and manage your rewards more efficiently.
           </p>
           <button className={styles.cta} onClick={() => navigate('/swap-center')}>
-            OPEN SWAP CENTER <ArrowRight size={18} className={styles.ctaIcon} />
+            <span>OPEN SWAP CENTER</span>
+            <ArrowRight size={16} />
           </button>
         </div>
         
         <div className={styles.visualArea}>
-          <div className={styles.backgroundWallet}>
-             <div className={styles.walletHeader}>
-                <CreditCard size={14} />
-                <span>REWARD WALLET</span>
-             </div>
-             <div className={styles.walletLabel}>Eligible Balances</div>
-             <div className={styles.walletTrack}>
-                <div className={styles.walletFill} style={{width: '75%', background: '#fcd34d'}}></div>
-             </div>
-             <div className={styles.walletTrack}>
-                <div className={styles.walletFill} style={{width: '40%', background: '#60a5fa'}}></div>
-             </div>
-          </div>
-
-          <div className={styles.exchangeMechanism}>
-            <div className={`${styles.card} ${styles.cardLeft}`}>
-              <div className={styles.cardTop}>
-                <span className={styles.cardCurrency}>VE</span>
-                <div className={styles.coinGold}></div>
+          <div className={styles.cardContainer}>
+            <div className={styles.currencyCard}>
+              <div className={styles.cardHeader}>
+                <span className={styles.cardTitle}>VE</span>
+                <div className={styles.dotOrange}></div>
               </div>
-              <span className={styles.cardSubtitle}>REWARD CURRENCY</span>
-              <div className={styles.cardChip}></div>
+              <div className={styles.cardSubtitle}>REWARD CURRENCY</div>
+              <div className={styles.cardBlock}></div>
             </div>
             
-            <div className={styles.swapAction}>
-              <div className={styles.pulseRing}></div>
-              <div className={styles.swapIconContainer}>
-                <RefreshCw size={24} className={styles.spinIcon} />
-              </div>
+            <div className={styles.swapIconWrap}>
+              <RefreshCw size={24} className={styles.swapIcon} />
             </div>
             
-            <div className={`${styles.card} ${styles.cardRight}`}>
-              <div className={styles.cardTop}>
-                <span className={styles.cardCurrency}>SVE</span>
-                <div className={styles.coinBlue}></div>
+            <div className={styles.currencyCardBlue}>
+              <div className={styles.cardHeader}>
+                <span className={styles.cardTitle}>SVE</span>
+                <div className={styles.dotBlue}></div>
               </div>
-              <span className={styles.cardSubtitle}>REWARD CURRENCY</span>
-              <div className={styles.cardChip}></div>
+              <div className={styles.cardSubtitle}>REWARD CURRENCY</div>
+              <div className={styles.cardBlock}></div>
             </div>
           </div>
           
-          <div className={styles.flowLines}>
-             <ChevronRight className={styles.flowArrow} size={24} />
-             <ChevronRight className={styles.flowArrow} size={24} />
-             <ChevronRight className={styles.flowArrow} size={24} />
+          <div className={styles.floatingWallet}>
+             <div className={styles.walletHeader}>
+               <Layers size={12} /> REWARD WALLET
+             </div>
+             <div className={styles.walletDesc}>Eligible Balances</div>
+             <div className={styles.progressTrack}><div className={styles.progressBar}></div></div>
+             <div className={styles.progressTrack2}><div className={styles.progressBar2}></div></div>
           </div>
         </div>
       </div>

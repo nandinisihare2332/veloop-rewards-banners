@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import BannerWrapper from '../BannerWrapper';
 import styles from './BonusVEsBanner.module.css';
-import { ArrowRight, Sparkles, TrendingUp, Calendar, Users, Target } from 'lucide-react';
+import { ArrowRight, Sparkles, Calendar, Users, Target } from 'lucide-react';
 
 const BonusVEsBanner = () => {
   const navigate = useNavigate();
@@ -22,56 +22,59 @@ const BonusVEsBanner = () => {
             Complete eligible activities and unlock additional VEs through special bonus opportunities.
           </p>
           <button className={styles.cta} onClick={() => navigate('/bonus-ves')}>
-            EXPLORE BONUSES <ArrowRight size={18} className={styles.ctaIcon} />
+            <span>EXPLORE BONUSES</span>
+            <ArrowRight size={16} />
           </button>
         </div>
         
         <div className={styles.visualArea}>
-           <div className={styles.bonusCircle}>
-              <span className={styles.bonusText}>BONUS</span>
-              <span className={styles.veText}>VE</span>
-           </div>
-
-           <div className={styles.vault}>
-              <div className={styles.vaultDoor}>
-                 <div className={styles.handle}></div>
+          <div className={styles.activitiesList}>
+            <div className={styles.activityItem}>
+              <div className={styles.activityIconWrap}><Calendar size={16} /></div>
+              <div>
+                <div className={styles.activityTitle}>Daily Check-in</div>
+                <div className={styles.activityDesc}>Stay active</div>
               </div>
-              <div className={styles.coinsContainer}>
-                 <div className={`${styles.coin} ${styles.coin1}`}>VE</div>
-                 <div className={`${styles.coin} ${styles.coin2}`}>VE</div>
-                 <div className={`${styles.coin} ${styles.coin3}`}>VE</div>
+            </div>
+            <div className={styles.activityItem}>
+              <div className={styles.activityIconWrap}><Users size={16} /></div>
+              <div>
+                <div className={styles.activityTitle}>Invite Friends</div>
+                <div className={styles.activityDesc}>Grow together</div>
               </div>
-           </div>
-
-           <div className={styles.activitiesList}>
-              <div className={styles.activityItem}>
-                 <div className={styles.activityIconWrap}>
-                    <Calendar size={14} color="#60a5fa" />
-                 </div>
-                 <div className={styles.activityText}>
-                    <span className={styles.activityTitle}>Daily Check-in</span>
-                    <span className={styles.activitySub}>Stay active</span>
-                 </div>
+            </div>
+            <div className={styles.activityItem}>
+              <div className={styles.activityIconWrap}><Target size={16} /></div>
+              <div>
+                <div className={styles.activityTitle}>Complete Tasks</div>
+                <div className={styles.activityDesc}>Earn more</div>
               </div>
-              <div className={styles.activityItem}>
-                 <div className={styles.activityIconWrap}>
-                    <Users size={14} color="#c084fc" />
-                 </div>
-                 <div className={styles.activityText}>
-                    <span className={styles.activityTitle}>Invite Friends</span>
-                    <span className={styles.activitySub}>Grow together</span>
-                 </div>
-              </div>
-              <div className={styles.activityItem}>
-                 <div className={styles.activityIconWrap}>
-                    <Target size={14} color="#fcd34d" />
-                 </div>
-                 <div className={styles.activityText}>
-                    <span className={styles.activityTitle}>Complete Tasks</span>
-                    <span className={styles.activitySub}>Earn more</span>
-                 </div>
-              </div>
-           </div>
+            </div>
+          </div>
+          
+          <div className={styles.coinsDisplay}>
+             <div className={styles.coinCircleMain}>
+                <div className={styles.coinOuter}>
+                   <div className={styles.coinInner}>
+                      <span className={styles.coinText}>VE</span>
+                   </div>
+                </div>
+                <div className={styles.coinOuter2}>
+                   <div className={styles.coinInner}>
+                      <span className={styles.coinText}>VE</span>
+                   </div>
+                </div>
+                <div className={styles.coinOuter3}>
+                   <div className={styles.coinInner}>
+                      <span className={styles.coinText}>VE</span>
+                   </div>
+                </div>
+             </div>
+             
+             <div className={styles.floatingBonus}>
+                <span>BONU</span><span className={styles.highlightVe}>VE</span>
+             </div>
+          </div>
         </div>
       </div>
     </BannerWrapper>
