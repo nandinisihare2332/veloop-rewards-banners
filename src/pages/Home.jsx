@@ -9,20 +9,17 @@ import '../App.css';
 function Home() {
   return (
     <div className="app-container page-transition">
-      <h1 className="main-title">VELOOP Rewards</h1>
-      <div className="arrow-down">↓</div>
-      
       <ReferEarnBanner />
-      <div className="arrow-down">↓</div>
+      <div className="arrow-down">?</div>
       
       <BonusVEsBanner />
-      <div className="arrow-down">↓</div>
+      <div className="arrow-down">?</div>
       
       <SwapCenterBanner />
-      <div className="arrow-down">↓</div>
+      <div className="arrow-down">?</div>
       
       <CaptchaTasksBanner />
-      <div className="arrow-down">↓</div>
+      <div className="arrow-down">?</div>
       
       <ExchangeCenterBanner />
     </div>
