@@ -2,50 +2,64 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import BannerWrapper from '../BannerWrapper';
 import styles from './CaptchaTasksBanner.module.css';
-import { ArrowRight, CheckCircle, ShieldCheck } from 'lucide-react';
+import { ShieldCheck, ArrowRight, Check } from 'lucide-react';
+import captchaArt from '../../assets/images/captcha-tasks-art.png';
 
 const CaptchaTasksBanner = () => {
   const navigate = useNavigate();
+
   return (
     <BannerWrapper className={styles.wrapper}>
+      {/* Ambient background glows */}
+      <div className={styles.glowPurple}></div>
+      <div className={styles.glowBlue}></div>
+
       <div className={styles.container}>
+        {/* Left Typography & CTA Content */}
         <div className={styles.content}>
           <div className={styles.badge}>
-            <ShieldCheck size={14} className={styles.badgeIcon} />
-            <span>VERIFICATION TASKS</span>
+            <ShieldCheck size={13} className={styles.badgeIcon} />
+            <span>ACCURACY REWARDS</span>
           </div>
+
           <h2 className={styles.heading}>
-            Solve Captchas.<br/>
+            Solve Captchas.<br />
             <span className={styles.headingHighlight}>Earn Gems.</span>
           </h2>
+
           <p className={styles.description}>
             Complete simple captcha tasks accurately and earn eligible Gem rewards.
           </p>
-          <button className={styles.cta} onClick={() => navigate('/captcha-tasks')}>
+
+          <button 
+            className={styles.goldCta} 
+            onClick={() => navigate('/captcha-tasks')}
+            aria-label="Start captcha task"
+          >
+            <span className={styles.doubleArrow}>&gt;&gt;</span>
             <span>START TASK</span>
-            <ArrowRight size={16} />
           </button>
-        </div>
-        
-        <div className={styles.visualArea}>
-          <div className={styles.laptop}>
-            <div className={styles.screen}>
-               <div className={styles.captchaBox}>
-                 <span className={styles.captchaText}>K 7 M 4</span>
-                 <div className={styles.stripeOverlay}></div>
-               </div>
-               <div className={styles.inputArea}>
-                 <div className={styles.inputField}>K7M4 <span className={styles.cursor}>|</span></div>
-                 <div className={styles.submitBtn}><CheckCircle size={16} /></div>
-               </div>
+
+          {/* Process Flow Badge matching reference: [K7M4] ---> [✓] ---> [💎] */}
+          <div className={styles.flowBadge}>
+            <div className={styles.captchaSample}>K7M4</div>
+            <span className={styles.flowArrow}>---&gt;</span>
+            <div className={styles.checkCircle}>
+              <Check size={11} strokeWidth={3} />
             </div>
-            <div className={styles.base}></div>
+            <span className={styles.flowArrow}>---&gt;</span>
+            <div className={styles.gemIcon}>💎</div>
           </div>
-          <div className={styles.floatGem1}></div>
-          <div className={styles.floatGem2}></div>
-          <div className={styles.floatGem3}></div>
-          <div className={styles.successIcon}>
-             <CheckCircle size={32} />
+        </div>
+
+        {/* Right 3D Visual Art (Terminal Device + CRT Captcha Screen + Flying Purple Crystals) */}
+        <div className={styles.visualWrapper} onClick={() => navigate('/captcha-tasks')}>
+          <div className={styles.artContainer}>
+            <img 
+              src={captchaArt} 
+              alt="Solve Captchas, Earn Gems terminal device with crystal gemstones" 
+              className={styles.heroArt}
+            />
           </div>
         </div>
       </div>

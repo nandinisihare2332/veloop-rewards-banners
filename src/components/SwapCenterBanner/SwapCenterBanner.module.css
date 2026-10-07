@@ -1,239 +1,224 @@
-﻿.wrapper {
+.wrapper {
   position: relative;
-  width: 100%;
-  height: 100%;
+  background: radial-gradient(circle at 75% 50%, rgba(56, 189, 248, 0.16) 0%, transparent 55%),
+              radial-gradient(circle at 40% 70%, rgba(245, 158, 11, 0.08) 0%, transparent 45%),
+              linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   display: flex;
-  background: #0f172a;
+  align-items: center;
+  padding: 36px 44px;
   overflow: hidden;
+}
+
+.glowBlue {
+  position: absolute;
+  top: 10%;
+  right: 25%;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.18) 0%, transparent 70%);
+  filter: blur(55px);
+  pointer-events: none;
+}
+
+.glowAmber {
+  position: absolute;
+  bottom: -30px;
+  right: 55%;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
 }
 
 .container {
   display: flex;
-  flex: 1;
-  padding: 60px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  width: 100%;
   position: relative;
   z-index: 2;
-  align-items: center;
 }
 
 .content {
-  flex: 1;
+  max-width: 440px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
+  z-index: 3;
 }
 
 .badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(234, 179, 8, 0.1);
-  border: 1px solid rgba(234, 179, 8, 0.2);
-  color: #eab308;
-  padding: 6px 12px;
-  border-radius: 20px;
+  gap: 6px;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  padding: 5px 14px;
+  border-radius: 999px;
   font-size: 0.75rem;
   font-weight: 700;
-  margin-bottom: 24px;
-  width: max-content;
+  letter-spacing: 0.08em;
+  color: #1e3a8a;
+  margin-bottom: 16px;
+  backdrop-filter: blur(8px);
 }
 
 .badgeIcon {
-  color: #eab308;
+  color: #1e3a8a;
 }
 
 .heading {
-  font-size: 3rem;
+  font-size: 2.9rem;
   font-weight: 800;
   line-height: 1.1;
-  margin-bottom: 16px;
-  color: #ffffff;
-}
-
-.headingHighlight {
-  color: #ffffff;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
 }
 
 .description {
-  color: #94a3b8;
-  font-size: 1.1rem;
-  line-height: 1.5;
-  margin-bottom: 32px;
-  max-width: 450px;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: #334155;
+  margin-bottom: 28px;
+  max-width: 400px;
 }
 
-.cta {
-  background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
-  color: #1e293b;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 700;
+/* Metallic Gold Pill CTA Button matching reference */
+.goldCta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  cursor: pointer;
-  transition: opacity 0.2s;
-  width: max-content;
-}
-
-
-
-.visualArea {
-  flex: 1.2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.cardContainer {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.currencyCard {
-  background: #1e293b;
-  border: 1px solid rgba(234, 179, 8, 0.2);
-  border-radius: 16px;
-  padding: 24px;
-  width: 140px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-.currencyCardBlue {
-  background: #1e293b;
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  border-radius: 16px;
-  padding: 24px;
-  width: 140px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  background: linear-gradient(145deg, #1e293b 0%, #1e3a8a 100%);
-}
-
-.cardHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 8px;
-}
-
-.cardTitle {
-  font-size: 1.5rem;
+  background: linear-gradient(135deg, #fde68a 0%, #f59e0b 50%, #d97706 100%);
+  color: #ffffff;
+  border: none;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-size: 0.92rem;
   font-weight: 800;
-  color: #fff;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.6);
 }
 
-.dotOrange {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #eab308;
-  box-shadow: 0 0 10px #eab308;
+.goldCta:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 32px -4px rgba(245, 158, 11, 0.7), 0 0 25px rgba(251, 191, 36, 0.4);
 }
 
-.dotBlue {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #60a5fa;
-  box-shadow: 0 0 10px #60a5fa;
+.chevronIcon {
+  color: #0f172a;
+  transition: transform 0.25s ease;
 }
 
-.cardSubtitle {
-  font-size: 0.6rem;
-  color: #94a3b8;
-  margin-bottom: 16px;
+.goldCta:hover .chevronIcon {
+  transform: translateX(3px);
 }
 
-.cardBlock {
-  width: 24px;
-  height: 16px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 4px;
+/* Right 3D Visual Art */
+.visualWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  max-width: 600px;
 }
 
-.swapIconWrap {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: rgba(30, 41, 59, 0.8);
-  border: 1px solid rgba(255,255,255,0.05);
+.artContainer {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #60a5fa;
+  animation: floatCards 5s ease-in-out infinite;
 }
 
-.floatingWallet {
-  position: absolute;
-  top: -20px;
-  right: 0px;
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(255,255,255,0.05);
-  border-radius: 12px;
-  padding: 16px;
-  width: 200px;
-  backdrop-filter: blur(10px);
+@keyframes floatCards {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
-.walletHeader {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #94a3b8;
-  font-size: 0.7rem;
-  font-weight: 600;
-  margin-bottom: 12px;
+.heroArt {
+  max-height: 330px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.75));
+  transition: transform 0.4s ease;
 }
 
-.walletDesc {
-  color: #64748b;
-  font-size: 0.75rem;
-  margin-bottom: 12px;
+.wrapper:hover .heroArt {
+  transform: scale(1.02);
 }
 
-.progressTrack {
-  height: 4px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 4px;
-  margin-bottom: 8px;
+/* Tablet Media Query (380px - 540px height) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .wrapper {
+    padding: 28px 32px;
+  }
+
+  .heading {
+    font-size: 2.2rem;
+  }
+
+  .heroArt {
+    max-height: 260px;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
 }
 
-.progressBar {
-  width: 70%;
-  height: 100%;
-  background: #eab308;
-  border-radius: 4px;
-}
+/* Mobile Media Query (330px - 520px height) */
+@media (max-width: 767px) {
+  .wrapper {
+    padding: 22px 20px;
+  }
 
-.progressTrack2 {
-  height: 4px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 4px;
-}
+  .container {
+    flex-direction: column-reverse;
+    gap: 14px;
+    align-items: center;
+  }
 
-.progressBar2 {
-  width: 40%;
-  height: 100%;
-  background: #3b82f6;
-  border-radius: 4px;
-}
+  .visualWrapper {
+    max-width: 100%;
+    justify-content: center;
+  }
 
-@media (max-width: 900px) {
-  .container { flex-direction: column; gap: 40px; }
-  .visualArea { flex-direction: column; }
-  .heading { font-size: 2.2rem; }
-  .floatingWallet { position: relative; top: 0; right: 0; margin-top: 20px;}
-}
+  .heroArt {
+    max-height: 180px;
+  }
 
-/* Enhanced Hover Effects */
-.cta {
-  transition: all 0.3s ease;
-}
-.cta:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+  .content {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+
+  .description {
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+  }
+
+  .goldCta {
+    width: 100%;
+    justify-content: center;
+    padding: 11px 18px;
+    font-size: 0.88rem;
+  }
 }

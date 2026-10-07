@@ -96,4 +96,5 @@ src/
 - [https://github.com/nandinisihare2332/veloop-rewards-banners.git]
 
 ## Author
-Nandini
+Nandini Sihare
+

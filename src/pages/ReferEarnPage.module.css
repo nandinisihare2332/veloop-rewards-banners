@@ -1,7 +1,7 @@
-﻿.backBtn {
+.backBtn {
   background: transparent;
   border: none;
-  color: #cbd5e1;
+  color: #334155;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -13,15 +13,15 @@
 }
 
 .backBtn:hover {
-  color: #fff;
+  color: #0f172a;
 }
 
 .pageCard {
-  background: #161827;
+  background: #ffffff;
   width: 100%;
   padding: 40px;
   border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   min-height: 60vh;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
@@ -48,7 +48,7 @@
 .pageTitle {
   text-align: left;
   margin-bottom: 0;
-  color: #fff;
+  color: #0f172a;
   font-size: 2.2rem;
   font-weight: 800;
 }
@@ -61,7 +61,7 @@
 }
 
 .statCard {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(15, 23, 42, 0.6) 100%);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(255, 255, 255, 0.6) 100%);
   border: 1px solid rgba(245, 158, 11, 0.2);
   padding: 30px;
   border-radius: 16px;
@@ -71,7 +71,7 @@
 }
 
 .statCardSecondary {
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(15, 23, 42, 0.6) 100%);
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(255, 255, 255, 0.6) 100%);
   border: 1px solid rgba(56, 189, 248, 0.2);
   padding: 30px;
   border-radius: 16px;
@@ -81,13 +81,13 @@
 }
 
 .statLabel {
-  color: #cbd5e1;
+  color: #334155;
   font-size: 1rem;
   margin-bottom: 10px;
 }
 
 .statValue {
-  color: #fbbf24;
+  color: #d97706;
   font-size: 3rem;
   font-weight: 800;
   margin: 0 0 5px 0;
@@ -95,7 +95,7 @@
 }
 
 .statValueSecondary {
-  color: #38bdf8;
+  color: #0284c7;
   font-size: 3rem;
   font-weight: 800;
   margin: 0 0 5px 0;
@@ -104,21 +104,21 @@
 
 .veText {
   font-size: 1.5rem;
-  color: #fbbf24;
+  color: #d97706;
 }
 
 .statDesc {
-  color: #94a3b8;
+  color: #334155;
   font-size: 0.9rem;
   margin: 0;
 }
 
 .statIconWrap {
-  color: rgba(245, 158, 11, 0.2);
+  color: rgba(217, 119, 6, 0.3);
 }
 
 .statIconWrapSecondary {
-  color: rgba(56, 189, 248, 0.2);
+  color: rgba(2, 132, 199, 0.3);
 }
 
 .actionGrid {
@@ -129,27 +129,27 @@
 }
 
 .actionCard {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   padding: 30px;
   border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .howItWorksCard {
-  background: rgba(15, 23, 42, 0.4);
+  background: rgba(248, 250, 252, 0.8);
   padding: 30px;
   border-radius: 16px;
   border: 1px dashed rgba(255,255,255,0.1);
 }
 
 .actionTitle {
-  color: #f8fafc;
+  color: #0f172a;
   margin-bottom: 8px;
   font-size: 1.2rem;
 }
 
 .actionDesc {
-  color: #94a3b8;
+  color: #334155;
   font-size: 0.95rem;
   margin-bottom: 20px;
 }
@@ -163,16 +163,16 @@
   flex: 1;
   padding: 15px;
   border-radius: 8px;
-  border: 1px solid #334155;
-  background: #0f172a;
-  color: #f8fafc;
+  border: 1px solid rgba(15,23,42,0.1);
+  background: #f1f5f9;
+  color: #0f172a;
   font-size: 1rem;
   transition: border-color 0.2s;
 }
 
 .inputBox:focus {
   outline: none;
-  border-color: #38bdf8;
+  border-color: #0284c7;
 }
 
 .primaryBtn {
@@ -225,7 +225,7 @@
   width: 32px;
   height: 32px;
   background: rgba(56, 189, 248, 0.1);
-  color: #38bdf8;
+  color: #0284c7;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -235,21 +235,21 @@
 }
 
 .stepTitle {
-  color: #e2e8f0;
+  color: #0f172a;
   font-weight: 600;
   margin-bottom: 4px;
 }
 
 .stepDesc {
-  color: #64748b;
+  color: #334155;
   font-size: 0.9rem;
 }
 
 .tableCard {
-  background: rgba(15, 23, 42, 0.4);
+  background: rgba(248, 250, 252, 0.8);
   padding: 30px;
   border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .tableHeaderWrap {
@@ -271,24 +271,24 @@
 .customTable th {
   padding: 16px;
   text-align: left;
-  color: #64748b;
+  color: #334155;
   font-weight: 600;
   font-size: 0.9rem;
-  border-bottom: 1px solid #334155;
+  border-bottom: 1px solid rgba(15,23,42,0.1);
 }
 
 .customTable td {
   padding: 20px 16px;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
 }
 
 .tdEmail {
-  color: #e2e8f0;
+  color: #334155;
   font-weight: 500;
 }
 
 .tdReward {
-  color: #fbbf24;
+  color: #d97706;
   font-weight: 700;
 }
 
@@ -307,7 +307,7 @@
   border-radius: 20px;
   font-size: 0.85rem;
   background: rgba(245, 158, 11, 0.1);
-  color: #fbbf24;
+  color: #d97706;
   font-weight: 600;
   border: 1px solid rgba(245, 158, 11, 0.2);
 }
@@ -341,5 +341,5 @@
 }
 .backBtn:hover {
   transform: translateX(-5px);
-  color: #fff;
+  color: #0f172a;
 }

@@ -1,212 +1,263 @@
-﻿.wrapper {
+.wrapper {
   position: relative;
-  width: 100%;
-  height: 100%;
+  background: radial-gradient(circle at 75% 45%, rgba(245, 158, 11, 0.12) 0%, transparent 50%),
+              radial-gradient(circle at 45% 30%, rgba(59, 130, 246, 0.12) 0%, transparent 45%),
+              linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   display: flex;
-  background: #0f172a;
+  align-items: center;
+  padding: 36px 44px;
   overflow: hidden;
+}
+
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.glowGold {
+  position: absolute;
+  top: 10%;
+  right: 20%;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 65%);
+  filter: blur(55px);
+  pointer-events: none;
+}
+
+.glowBlue {
+  position: absolute;
+  bottom: -20px;
+  right: 50%;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 65%);
+  filter: blur(50px);
+  pointer-events: none;
 }
 
 .container {
   display: flex;
-  flex: 1;
-  padding: 40px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  width: 100%;
   position: relative;
   z-index: 2;
-  align-items: center;
 }
 
 .content {
-  flex: 1;
+  max-width: 440px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
+  z-index: 3;
 }
 
 .badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(217, 119, 6, 0.1);
-  border: 1px solid rgba(217, 119, 6, 0.2);
-  color: #f59e0b;
-  padding: 6px 12px;
-  border-radius: 20px;
+  gap: 6px;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  padding: 5px 14px;
+  border-radius: 999px;
   font-size: 0.75rem;
   font-weight: 700;
-  margin-bottom: 24px;
-  width: max-content;
+  letter-spacing: 0.08em;
+  color: #b45309;
+  margin-bottom: 14px;
+  backdrop-filter: blur(8px);
 }
 
 .badgeIcon {
-  color: #f59e0b;
+  color: #b45309;
 }
 
 .heading {
-  font-size: 3rem;
+  font-size: 2.75rem;
   font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 16px;
-  color: #ffffff;
+  line-height: 1.12;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
 }
 
 .headingHighlight {
-  color: #f59e0b;
+  background: linear-gradient(135deg, #d97706 0%, #b45309 40%, #92400e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.accentDivider {
+  display: flex;
+  align-items: center;
+  color: #d97706;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  margin-bottom: 12px;
+  opacity: 0.85;
 }
 
 .description {
-  color: #94a3b8;
-  font-size: 1.1rem;
-  line-height: 1.5;
-  margin-bottom: 32px;
-  max-width: 450px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #334155;
+  margin-bottom: 26px;
+  max-width: 410px;
 }
 
-.cta {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  color: #fff;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 700;
+/* Metallic Gold Pill CTA Button matching reference */
+.goldCta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+  background: linear-gradient(135deg, #fde68a 0%, #f59e0b 50%, #d97706 100%);
+  color: #ffffff;
+  border: none;
+  padding: 10px 10px 10px 24px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
   cursor: pointer;
-  transition: opacity 0.2s;
-  width: max-content;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.6);
 }
 
-
-
-.visualArea {
-  flex: 1.2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  position: relative;
+.goldCta:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 32px -4px rgba(245, 158, 11, 0.7), 0 0 25px rgba(251, 191, 36, 0.4);
 }
 
-.activitiesList {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.activityItem {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: rgba(30, 41, 59, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 12px 16px;
-  border-radius: 12px;
-  width: 200px;
-}
-
-.activityIconWrap {
-  color: #60a5fa;
-}
-
-.activityTitle {
-  color: #f8fafc;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.activityDesc {
-  color: #64748b;
-  font-size: 0.75rem;
-}
-
-.coinsDisplay {
-  position: relative;
-  width: 200px;
-  height: 200px;
-}
-
-.coinCircleMain {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: #1e293b;
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.5);
-  position: relative;
-}
-
-.coinOuter, .coinOuter2, .coinOuter3 {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #f59e0b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.4);
-}
-
-.coinOuter { top: 50px; left: 80px; }
-.coinOuter2 { top: 100px; left: 40px; }
-.coinOuter3 { top: 90px; right: 40px; }
-
-.coinInner {
+.arrowCircle {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #d97706;
-  border: 2px solid #fbbf24;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.coinText {
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: 800;
-}
-
-.floatingBonus {
-  position: absolute;
-  top: 0;
-  right: -60px;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 1px dashed #f59e0b;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #f59e0b;
-  font-weight: 700;
-  font-size: 0.9rem;
-  animation: float 4s ease-in-out infinite;
+  transition: transform 0.25s ease, background-color 0.25s ease;
 }
 
-.highlightVe {
-  color: #ffffff;
+.goldCta:hover .arrowCircle {
+  transform: translateX(3px);
+  background: #f1f5f9;
 }
 
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+/* Right 3D Visual Art */
+.visualWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  max-width: 620px;
 }
 
-@media (max-width: 900px) {
-  .container { flex-direction: column; gap: 40px; }
-  .visualArea { flex-direction: column; }
-  .heading { font-size: 2.2rem; }
+.artContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: floatPedestal 5s ease-in-out infinite;
 }
 
-/* Enhanced Hover Effects */
-.cta {
-  transition: all 0.3s ease;
+@keyframes floatPedestal {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
-.cta:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+
+.heroArt {
+  max-height: 330px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.75));
+  transition: transform 0.4s ease;
+}
+
+.wrapper:hover .heroArt {
+  transform: scale(1.02);
+}
+
+/* Tablet Media Query (380px - 540px height) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .wrapper {
+    padding: 28px 32px;
+  }
+
+  .heading {
+    font-size: 2.1rem;
+  }
+
+  .heroArt {
+    max-height: 260px;
+  }
+
+  .description {
+    font-size: 0.88rem;
+  }
+}
+
+/* Mobile Media Query (330px - 520px height) */
+@media (max-width: 767px) {
+  .wrapper {
+    padding: 22px 20px;
+  }
+
+  .container {
+    flex-direction: column-reverse;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .visualWrapper {
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .heroArt {
+    max-height: 180px;
+  }
+
+  .content {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 1.65rem;
+  }
+
+  .accentDivider {
+    margin-bottom: 8px;
+  }
+
+  .description {
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+
+  .goldCta {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 0.88rem;
+  }
 }

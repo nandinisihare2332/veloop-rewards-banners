@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, ShieldCheck, RefreshCw, Send, HelpCircle } from 'lucide-react';
 import toast from 'react-hot-toast';
@@ -28,9 +28,9 @@ const CaptchaTasksPage = () => {
     if (!captchaInput) return;
 
     if (captchaInput.toUpperCase() === captchaText) {
-      if (completedToday < totalDaily) {
+        if (completedToday < totalDaily) {
         setCompletedToday(prev => prev + 1);
-        toast.success('Correct! +2 VE Earned', { icon: '✅' });
+        toast.success('Correct! +5 Gems Earned! 💎', { icon: '💎' });
         setCaptchaInput('');
         generateNewCaptcha();
       } else {
@@ -59,7 +59,7 @@ const CaptchaTasksPage = () => {
            </div>
            <div>
              <h1 className={styles.pageTitle}>Captcha Tasks</h1>
-             <p className={styles.pageSubtitle}>Solve CAPTCHAs to earn VE instantly</p>
+             <p className={styles.pageSubtitle}>Solve CAPTCHAs to earn Gems instantly</p>
            </div>
         </div>
 
@@ -74,7 +74,7 @@ const CaptchaTasksPage = () => {
                style={{ width: `${(completedToday / totalDaily) * 100}%` }}
              ></div>
            </div>
-           <p className={styles.statDesc}>Earn 2 VE per successful solve. Reset at midnight UTC.</p>
+           <p className={styles.statDesc}>Earn 5 Gems (💎) per successful solve. Redeemable for VEs in Exchange Center.</p>
         </div>
 
         <div className={styles.captchaContainer}>

@@ -2,78 +2,60 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import BannerWrapper from '../BannerWrapper';
 import styles from './BonusVEsBanner.module.css';
-import { ArrowRight, Sparkles, Calendar, Users, Target } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
+import bonusArt from '../../assets/images/bonus-ves-art.png';
 
 const BonusVEsBanner = () => {
   const navigate = useNavigate();
+
   return (
     <BannerWrapper className={styles.wrapper}>
+      {/* Ambient background glows */}
+      <div className={styles.glowGold}></div>
+      <div className={styles.glowBlue}></div>
+      <div className={styles.gridOverlay}></div>
+
       <div className={styles.container}>
+        {/* Left Typography & CTA Content */}
         <div className={styles.content}>
           <div className={styles.badge}>
-            <Sparkles size={14} className={styles.badgeIcon} />
-            <span>BONUS</span>
+            <Sparkles size={13} className={styles.badgeIcon} />
+            <span>BONUS OPPORTUNITY</span>
           </div>
+
           <h2 className={styles.heading}>
-            Boost Your<br/>
+            Boost Your<br />
             <span className={styles.headingHighlight}>VE Balance</span>
           </h2>
+
+          <div className={styles.accentDivider}>
+            <span>&gt;&gt;&gt;</span>
+          </div>
+
           <p className={styles.description}>
             Complete eligible activities and unlock additional VEs through special bonus opportunities.
           </p>
-          <button className={styles.cta} onClick={() => navigate('/bonus-ves')}>
+
+          <button 
+            className={styles.goldCta} 
+            onClick={() => navigate('/bonus-ves')}
+            aria-label="Explore bonus opportunities"
+          >
             <span>EXPLORE BONUSES</span>
-            <ArrowRight size={16} />
+            <div className={styles.arrowCircle}>
+              <ArrowRight size={14} className={styles.arrowIcon} />
+            </div>
           </button>
         </div>
-        
-        <div className={styles.visualArea}>
-          <div className={styles.activitiesList}>
-            <div className={styles.activityItem}>
-              <div className={styles.activityIconWrap}><Calendar size={16} /></div>
-              <div>
-                <div className={styles.activityTitle}>Daily Check-in</div>
-                <div className={styles.activityDesc}>Stay active</div>
-              </div>
-            </div>
-            <div className={styles.activityItem}>
-              <div className={styles.activityIconWrap}><Users size={16} /></div>
-              <div>
-                <div className={styles.activityTitle}>Invite Friends</div>
-                <div className={styles.activityDesc}>Grow together</div>
-              </div>
-            </div>
-            <div className={styles.activityItem}>
-              <div className={styles.activityIconWrap}><Target size={16} /></div>
-              <div>
-                <div className={styles.activityTitle}>Complete Tasks</div>
-                <div className={styles.activityDesc}>Earn more</div>
-              </div>
-            </div>
-          </div>
-          
-          <div className={styles.coinsDisplay}>
-             <div className={styles.coinCircleMain}>
-                <div className={styles.coinOuter}>
-                   <div className={styles.coinInner}>
-                      <span className={styles.coinText}>VE</span>
-                   </div>
-                </div>
-                <div className={styles.coinOuter2}>
-                   <div className={styles.coinInner}>
-                      <span className={styles.coinText}>VE</span>
-                   </div>
-                </div>
-                <div className={styles.coinOuter3}>
-                   <div className={styles.coinInner}>
-                      <span className={styles.coinText}>VE</span>
-                   </div>
-                </div>
-             </div>
-             
-             <div className={styles.floatingBonus}>
-                <span>BONU</span><span className={styles.highlightVe}>VE</span>
-             </div>
+
+        {/* Right 3D Visual Art (Frosted Activity Flows + Hologram VE Pedestal + Coin Vault) */}
+        <div className={styles.visualWrapper} onClick={() => navigate('/bonus-ves')}>
+          <div className={styles.artContainer}>
+            <img 
+              src={bonusArt} 
+              alt="Boost Your VE Balance 3D Hologram Pedestal, Activity flows, and Coin Vault" 
+              className={styles.heroArt}
+            />
           </div>
         </div>
       </div>

@@ -1,10 +1,10 @@
-﻿.backBtn {
+.backBtn {
   display: flex;
   align-items: center;
   gap: 8px;
   background: transparent;
   border: none;
-  color: #94a3b8;
+  color: #334155;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -15,17 +15,17 @@
 
 .backBtn:hover {
   transform: translateX(-5px);
-  color: #ffffff;
+  color: #0f172a;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .pageCard {
-  background: linear-gradient(165deg, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.95));
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 1));
   backdrop-filter: blur(20px);
   border-radius: 32px;
   padding: 48px;
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.05);
   position: relative;
   overflow: hidden;
@@ -62,10 +62,10 @@
 .pageTitle {
   font-size: 2.2rem;
   font-weight: 800;
-  color: #ffffff;
+  color: #0f172a;
   margin: 0;
   letter-spacing: -0.02em;
-  background: linear-gradient(to right, #fff, #94a3b8);
+  background: linear-gradient(to right, #0f172a, #334155);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -79,41 +79,34 @@
   z-index: 2;
 }
 
-.balanceCardOutline {
-  background: rgba(30, 41, 59, 0.4);
-  border: 1px solid rgba(139, 92, 246, 0.2);
-  border-radius: 24px;
-  padding: 28px;
+.balanceCardGem, .balanceCardVe {
+  border-radius: 16px;
+  padding: 24px 30px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-  position: relative;
-  overflow: hidden;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.balanceCardOutline::after {
-  content: '';
-  position: absolute;
-  top: -50%; left: -50%; width: 200%; height: 200%;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
+.balanceCardGem {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(255, 255, 255, 0.8) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
-.balanceCardOutline:hover {
+.balanceCardVe {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(255, 255, 255, 0.8) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.balanceCardGem:hover, .balanceCardVe:hover {
   transform: translateY(-5px);
-  border-color: rgba(139, 92, 246, 0.6);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(139, 92, 246, 0.15);
-}
-
-.balanceCardOutline:hover::after {
-  opacity: 1;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .balanceLabel {
   font-size: 1rem;
-  color: #94a3b8;
+  color: #334155;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -132,7 +125,7 @@
 .gemValue {
   font-size: 2.5rem;
   font-weight: 800;
-  background: linear-gradient(to right, #d8b4fe, #a855f7);
+  background: linear-gradient(to right, #9333ea, #7e22ce);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -145,7 +138,7 @@
 .veValue {
   font-size: 2.5rem;
   font-weight: 800;
-  background: linear-gradient(to right, #fde047, #f59e0b);
+  background: linear-gradient(to right, #d97706, #b45309);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
@@ -153,8 +146,8 @@
 }
 
 .convertCard {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 24px;
   padding: 48px;
   max-width: 650px;
@@ -168,7 +161,7 @@
   text-align: center;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #0f172a;
   margin-bottom: 40px;
   letter-spacing: -0.01em;
 }
@@ -182,8 +175,8 @@
 }
 
 .rateCardGem, .rateCardVe {
-  background: rgba(30, 41, 59, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(15, 23, 42, 0.1);
   border-radius: 16px;
   padding: 20px 40px;
   font-size: 1.25rem;
@@ -192,13 +185,13 @@
 }
 
 .rateCardGem {
-  color: #d8b4fe;
+  color: #7e22ce;
   border-color: rgba(168, 85, 247, 0.3);
   box-shadow: 0 0 20px rgba(168, 85, 247, 0.1);
 }
 
 .rateCardVe {
-  color: #fde047;
+  color: #d97706;
   border-color: rgba(245, 158, 11, 0.3);
   box-shadow: 0 0 20px rgba(245, 158, 11, 0.1);
 }
@@ -218,7 +211,7 @@
 .inputLabel {
   font-size: 1rem;
   font-weight: 600;
-  color: #cbd5e1;
+  color: #334155;
 }
 
 .inputWrapper {
@@ -228,13 +221,13 @@
 
 .amountInput {
   width: 100%;
-  background: rgba(15, 23, 42, 0.8);
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  background: rgba(241, 245, 249, 0.8);
+  border: 2px solid rgba(15, 23, 42, 0.15);
   border-radius: 16px;
   padding: 20px 24px;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #0f172a;
   outline: none;
   transition: all 0.3s ease;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -242,12 +235,12 @@
 
 .amountInput:focus {
   border-color: #8b5cf6;
-  background: rgba(30, 41, 59, 0.9);
+  background: #ffffff;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 0 4px rgba(139, 92, 246, 0.15);
 }
 
 .amountInput::placeholder {
-  color: #475569;
+  color: #334155;
   font-weight: 500;
 }
 
@@ -260,22 +253,21 @@
 
 .receiveText {
   font-size: 1rem;
-  color: #94a3b8;
+  color: #334155;
   font-weight: 500;
 }
 
 .receiveValue {
-  color: #fde047;
+  color: #d97706;
   font-weight: 800;
   font-size: 1.1rem;
   margin-left: 6px;
-  text-shadow: 0 0 10px rgba(253, 224, 71, 0.3);
 }
 
 .maxBtn {
   background: rgba(139, 92, 246, 0.1);
   border: 1px solid rgba(139, 92, 246, 0.3);
-  color: #d8b4fe;
+  color: #7e22ce;
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
@@ -312,10 +304,10 @@
 }
 
 .submitBtnDisabled {
-  background: rgba(51, 65, 85, 0.5);
-  color: #64748b;
+  background: #f1f5f9;
+  color: #94a3b8;
   cursor: not-allowed;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 @media (max-width: 768px) {

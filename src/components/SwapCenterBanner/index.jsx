@@ -2,62 +2,52 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import BannerWrapper from '../BannerWrapper';
 import styles from './SwapCenterBanner.module.css';
-import { ArrowRight, RefreshCw, Layers } from 'lucide-react';
+import { RefreshCw, ChevronRight } from 'lucide-react';
+import swapArt from '../../assets/images/swap-center-art.png';
 
 const SwapCenterBanner = () => {
   const navigate = useNavigate();
+
   return (
     <BannerWrapper className={styles.wrapper}>
+      {/* Ambient background glows */}
+      <div className={styles.glowBlue}></div>
+      <div className={styles.glowAmber}></div>
+
       <div className={styles.container}>
+        {/* Left Typography & CTA Content */}
         <div className={styles.content}>
           <div className={styles.badge}>
-            <RefreshCw size={14} className={styles.badgeIcon} />
-            <span>EXCHANGE</span>
+            <RefreshCw size={13} className={styles.badgeIcon} />
+            <span>CURRENCY SWAP</span>
           </div>
+
           <h2 className={styles.heading}>
             Swap Center
           </h2>
+
           <p className={styles.description}>
-            Convert eligible reward balances between supported currencies and manage your rewards more efficiently.
+            Convert eligible reward balances between supported currencies.
           </p>
-          <button className={styles.cta} onClick={() => navigate('/swap-center')}>
+
+          <button 
+            className={styles.goldCta} 
+            onClick={() => navigate('/swap-center')}
+            aria-label="Open swap center"
+          >
             <span>OPEN SWAP CENTER</span>
-            <ArrowRight size={16} />
+            <ChevronRight size={18} className={styles.chevronIcon} />
           </button>
         </div>
-        
-        <div className={styles.visualArea}>
-          <div className={styles.cardContainer}>
-            <div className={styles.currencyCard}>
-              <div className={styles.cardHeader}>
-                <span className={styles.cardTitle}>VE</span>
-                <div className={styles.dotOrange}></div>
-              </div>
-              <div className={styles.cardSubtitle}>REWARD CURRENCY</div>
-              <div className={styles.cardBlock}></div>
-            </div>
-            
-            <div className={styles.swapIconWrap}>
-              <RefreshCw size={24} className={styles.swapIcon} />
-            </div>
-            
-            <div className={styles.currencyCardBlue}>
-              <div className={styles.cardHeader}>
-                <span className={styles.cardTitle}>SVE</span>
-                <div className={styles.dotBlue}></div>
-              </div>
-              <div className={styles.cardSubtitle}>REWARD CURRENCY</div>
-              <div className={styles.cardBlock}></div>
-            </div>
-          </div>
-          
-          <div className={styles.floatingWallet}>
-             <div className={styles.walletHeader}>
-               <Layers size={12} /> REWARD WALLET
-             </div>
-             <div className={styles.walletDesc}>Eligible Balances</div>
-             <div className={styles.progressTrack}><div className={styles.progressBar}></div></div>
-             <div className={styles.progressTrack2}><div className={styles.progressBar2}></div></div>
+
+        {/* Right 3D Visual Art (Wallet Phone + VE Card + SVE Card + Glowing Swap Portal) */}
+        <div className={styles.visualWrapper} onClick={() => navigate('/swap-center')}>
+          <div className={styles.artContainer}>
+            <img 
+              src={swapArt} 
+              alt="Swap Center 3D Currency Cards, VE and SVE balances and conversion vortex" 
+              className={styles.heroArt}
+            />
           </div>
         </div>
       </div>

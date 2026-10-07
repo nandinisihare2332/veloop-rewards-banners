@@ -1,0 +1,120 @@
+.footerWrapper {
+  width: 100%;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(248, 250, 252, 0.95);
+  margin-top: 60px;
+  padding: 44px 24px 30px;
+}
+
+.footerContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.brandBlock {
+  max-width: 460px;
+}
+
+.logoRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.logoBadge {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brandName {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.rewardsSpan {
+  color: #d97706;
+}
+
+.brandDesc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.badgeList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.specBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(226, 232, 240, 0.6);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.badgeIcon {
+  color: #2563eb;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  padding-top: 20px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.copyText {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.copyText strong {
+  color: #334155;
+}
+
+.subText {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+@media (max-width: 768px) {
+  .badgeList {
+    align-items: flex-start;
+  }
+
+  .bottomRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Wallet, ArrowRight } from 'lucide-react';
 import toast from 'react-hot-toast';
@@ -55,14 +55,14 @@ const ExchangeCenterPage = () => {
         </div>
 
         <div className={styles.balancesGrid}>
-           <div className={styles.balanceCardOutline}>
+           <div className={styles.balanceCardGem}>
               <div className={styles.balanceLabel}>My Gems</div>
               <div className={styles.balanceValueWrap}>
                 <span className={styles.gemValue}>{gems.toLocaleString()}</span>
                 <span className={styles.gemIcon}>💎</span>
               </div>
            </div>
-           <div className={styles.balanceCardOutline}>
+           <div className={styles.balanceCardVe}>
               <div className={styles.balanceLabel}>VE Balance</div>
               <div className={styles.veValue}>{veBalance.toLocaleString()}</div>
            </div>

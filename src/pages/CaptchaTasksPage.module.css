@@ -1,7 +1,7 @@
-﻿.backBtn {
+.backBtn {
   background: transparent;
   border: none;
-  color: #cbd5e1;
+  color: #334155;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -13,15 +13,15 @@
 }
 
 .backBtn:hover {
-  color: #fff;
+  color: #0f172a;
 }
 
 .pageCard {
-  background: #161827;
+  background: #ffffff;
   width: 100%;
   padding: 40px;
   border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   min-height: 60vh;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
@@ -48,21 +48,21 @@
 .pageTitle {
   text-align: left;
   margin-bottom: 4px;
-  color: #fff;
+  color: #0f172a;
   font-size: 2.2rem;
   font-weight: 800;
   line-height: 1.2;
 }
 
 .pageSubtitle {
-  color: #94a3b8;
+  color: #334155;
   font-size: 1rem;
   margin: 0;
 }
 
 .statsCard {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.6) 100%);
-  border: 1px solid rgba(255,255,255,0.05);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(248, 250, 252, 0.6) 100%);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 16px;
   padding: 24px 30px;
   margin-bottom: 40px;
@@ -76,13 +76,13 @@
 }
 
 .statLabel {
-  color: #cbd5e1;
+  color: #334155;
   font-size: 1.1rem;
   font-weight: 600;
 }
 
 .statValue {
-  color: #f8fafc;
+  color: #0f172a;
   font-size: 1.2rem;
   font-weight: 700;
 }
@@ -90,7 +90,7 @@
 .progressBarWrap {
   width: 100%;
   height: 10px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(15, 23, 42, 0.1);
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 12px;
@@ -104,18 +104,18 @@
 }
 
 .statDesc {
-  color: #64748b;
+  color: #334155;
   font-size: 0.9rem;
   margin: 0;
 }
 
 .captchaContainer {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   padding: 40px;
   border-radius: 20px;
   max-width: 600px;
   margin: 0 auto;
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .captchaBox {
@@ -164,9 +164,9 @@
 }
 
 .refreshBtn {
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: #94a3b8;
+  background: rgba(241, 245, 249, 0.8);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  color: #334155;
   width: 80px;
   border-radius: 12px;
   display: flex;
@@ -177,8 +177,8 @@
 }
 
 .refreshBtn:hover {
-  background: #1e293b;
-  color: #f8fafc;
+  background: #e2e8f0;
+  color: #0f172a;
 }
 
 .inputForm {
@@ -194,9 +194,9 @@
   width: 100%;
   padding: 16px 20px;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: #0f172a;
-  color: white;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: #f1f5f9;
+  color: #0f172a;
   font-size: 1.1rem;
   font-weight: 500;
   transition: border-color 0.2s;
@@ -229,8 +229,8 @@
 
 .submitBtnDisabled {
   padding: 0 24px;
-  background: #334155;
-  color: #94a3b8;
+  background: #e2e8f0;
+  color: #64748b;
   border: none;
   border-radius: 12px;
   font-size: 1rem;
@@ -247,7 +247,7 @@
   background: rgba(245, 158, 11, 0.1);
   border: 1px solid rgba(245, 158, 11, 0.2);
   border-radius: 12px;
-  color: #fbbf24;
+  color: #d97706;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -290,7 +290,7 @@
 }
 .refreshBtn:hover {
   transform: rotate(180deg);
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(15, 23, 42, 0.05);
 }
 
 .backBtn {
@@ -298,5 +298,5 @@
 }
 .backBtn:hover {
   transform: translateX(-5px);
-  color: #fff;
+  color: #0f172a;
 }
