@@ -294,6 +294,45 @@
   .balancesGrid {
     flex-direction: column;
   }
+  
+  .pageCard {
+    padding: 20px;
+  }
+  
+  .pageTitle {
+    font-size: 1.8rem;
+  }
+  
+  .swapForm {
+    padding: 24px 20px;
+  }
+  
+  .balanceCardVe, .balanceCardSve {
+    padding: 20px;
+  }
+  
+  .balanceValue, .balanceValueSve {
+    font-size: 1.8rem;
+  }
+  
+  .exchangeRateBox {
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+  
+  .currencyBox, .currencyBoxSve {
+    padding: 16px 12px;
+  }
+  
+  .currencyName, .currencyNameSve {
+    font-size: 1.2rem;
+  }
+  
+  .exchangeArrow {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
 }
 
 /* Hover effects */

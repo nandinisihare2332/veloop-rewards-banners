@@ -258,7 +258,16 @@
   flex-shrink: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .pageCard {
+    padding: 20px;
+  }
+  .pageTitle {
+    font-size: 1.8rem;
+  }
+  .captchaContainer {
+    padding: 20px;
+  }
   .captchaBox {
     flex-direction: column;
   }

@@ -141,12 +141,16 @@
 
 @media (max-width: 768px) {
   .pageCard {
-    padding: 32px 24px;
+    padding: 20px;
+  }
+  .pageTitle {
+    font-size: 1.8rem;
   }
   .stepItem {
     flex-direction: column;
     text-align: center;
     align-items: center;
     gap: 16px;
+    padding: 20px;
   }
 }

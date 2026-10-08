@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ArrowLeft, Users, Copy, CheckCircle, Share2, Mail, ExternalLink } from 'lucide-react';
 import toast from 'react-hot-toast';
@@ -103,34 +103,7 @@ const ReferEarnPage = () => {
                 </button>
              </form>
           </div>
-          
-          <div id="how-it-works" className={styles.howItWorksCard}>
-             <h3 className={styles.actionTitle}>How it works</h3>
-             <div style={{ marginTop: '20px' }}>
-                <div className={styles.stepItem}>
-                   <div className={styles.stepNum}>1</div>
-                   <div>
-                     <div className={styles.stepTitle}>Share Link</div>
-                     <div className={styles.stepDesc}>Send your link to friends</div>
-                   </div>
-                </div>
-                <div className={styles.stepItem}>
-                   <div className={styles.stepNum}>2</div>
-                   <div>
-                     <div className={styles.stepTitle}>Friends Join</div>
-                     <div className={styles.stepDesc}>They sign up & verify</div>
-                   </div>
-                </div>
-                <div className={styles.stepItem}>
-                   <div className={styles.stepNum}>3</div>
-                   <div>
-                     <div className={styles.stepTitle}>Earn VE</div>
-                     <div className={styles.stepDesc}>You both get 50 VE</div>
-                   </div>
-                </div>
-             </div>
           </div>
-        </div>
 
         <div className={styles.tableCard}>
           <div className={styles.tableHeaderWrap}>
